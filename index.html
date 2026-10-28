@@ -33,11 +33,10 @@
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.5;
-      padding-bottom: 90px; /* Space for fixed bottom bar */
+      padding-bottom: 90px;
       overflow-x: hidden;
     }
 
-    /* Container */
     .container {
       width: 100%;
       max-width: 860px;
@@ -45,7 +44,6 @@
       padding: 0 16px;
     }
 
-    /* Top Brand Header */
     .hero-header {
       background: radial-gradient(circle at top, #162238 0%, #0a0f18 100%);
       padding: 32px 16px 20px;
@@ -100,7 +98,6 @@
       gap: 6px;
     }
 
-    /* Sticky Navigation Filters */
     .sticky-filter-wrapper {
       position: sticky;
       top: 0;
@@ -139,7 +136,6 @@
       box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
     }
 
-    /* Cards Feed */
     .catalog-feed {
       margin-top: 20px;
       display: flex;
@@ -156,7 +152,6 @@
       transition: transform 0.2s;
     }
 
-    /* Carousel / Main Image */
     .card-gallery-wrap {
       position: relative;
       background: #000;
@@ -217,7 +212,6 @@
       cursor: pointer;
     }
 
-    /* Thumbnails Row */
     .thumbs-row {
       display: flex;
       gap: 6px;
@@ -248,7 +242,6 @@
       display: block;
     }
 
-    /* Card Body */
     .card-body {
       padding: 20px;
     }
@@ -292,7 +285,6 @@
       margin: 10px 0 16px;
     }
 
-    /* Features Grid */
     .features-list {
       display: flex;
       flex-wrap: wrap;
@@ -311,7 +303,6 @@
       gap: 5px;
     }
 
-    /* Card Action Button */
     .btn-reserve-card {
       display: flex;
       align-items: center;
@@ -334,7 +325,6 @@
       box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
     }
 
-    /* Fixed Bottom Conversion Bar (Mobile) */
     .fixed-bottom-bar {
       position: fixed;
       bottom: 0;
@@ -373,7 +363,6 @@
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
-    /* Lightbox Modal */
     .lightbox-modal {
       display: none;
       position: fixed;
@@ -462,7 +451,6 @@
       color: var(--text-muted);
     }
 
-    /* Footer */
     .site-footer {
       text-align: center;
       padding: 36px 16px 20px;
@@ -476,7 +464,6 @@
 </head>
 <body>
 
-  <!-- HERO HEADER -->
   <header class="hero-header">
     <div class="badge-nature">🌿 Refúgio Ecológico & Lazer</div>
     <h1 class="hero-title">Vale Silvestre Eco Park</h1>
@@ -490,7 +477,6 @@
     </div>
   </header>
 
-  <!-- STICKY FILTER BAR -->
   <div class="sticky-filter-wrapper">
     <div class="container">
       <div class="filter-scroll">
@@ -504,60 +490,48 @@
     </div>
   </div>
 
-  <!-- CATALOG FEED -->
   <main class="container">
     <div class="catalog-feed" id="catalogFeed">
 
       <article class="room-card" data-category="panoramicos" id="card-panoramico-02">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">Mais Procurado • Vista Panorâmica 360°</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('panoramico-02', 0)">
             <img id="main-img-panoramico-02" src="img/chale-panoramico-piso-02/foto_01.jpg" alt="Chalé Panorâmico — Piso 02 Superior">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('panoramico-02', 0)">
-            📸 Ver todas as 8 fotos
+            📸 Ver todas as 6 fotos
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 0)">
-            <img src="img/chale-panoramico-piso-02/foto_01.jpg" alt="Fachada e Rampa de Acesso Piso Superior">
+            <img src="img/chale-panoramico-piso-02/foto_01.jpg" alt="Cama de Casal com Coração de Pétalas">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 1)">
-            <img src="img/chale-panoramico-piso-02/foto_02.jpg" alt="Porta Superior e Placa Arara">
+            <img src="img/chale-panoramico-piso-02/foto_02.jpg" alt="Mimo de Boas-Vindas Vale Silvestre">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 2)">
-            <img src="img/chale-panoramico-piso-02/foto_03.jpg" alt="Quarto Casal Coracao Toalha e Petalas">
+            <img src="img/chale-panoramico-piso-02/foto_03.jpg" alt="Quarto Amplo e Aconchegante">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 3)">
-            <img src="img/chale-panoramico-piso-02/foto_04.jpg" alt="Detalhe Cama com Carta Boas Vindas">
+            <img src="img/chale-panoramico-piso-02/foto_04.jpg" alt="Bancada da Pia com Flores Naturais">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 4)">
-            <img src="img/chale-panoramico-piso-02/foto_05.jpg" alt="Quarto Amplo com Camas Solteiro e TV">
+            <img src="img/chale-panoramico-piso-02/foto_05.jpg" alt="Varanda Panorâmica Debruçada na Lagoa">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 5)">
-            <img src="img/chale-panoramico-piso-02/foto_06.jpg" alt="Bancada da Pia Decorada com Flores">
-          </div>
-        
-          <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 6)">
-            <img src="img/chale-panoramico-piso-02/foto_07.jpg" alt="Varanda de Madeira Mesa sobre a Lagoa">
-          </div>
-        
-          <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 7)">
-            <img src="img/chale-panoramico-piso-02/foto_08.jpg" alt="Vista Panoramica Espetacular da Lagoa">
+            <img src="img/chale-panoramico-piso-02/foto_06.jpg" alt="Vista Espetacular da Lagoa e Natureza">
           </div>
         
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: Arara</span>
@@ -568,7 +542,7 @@
           <p class="room-desc">Localizado no ponto mais nobre da colina com rampa suave de madeira. Possui pé-direito alto, ambiente super arejado e uma varanda panorâmica de madeira privativa com a vista mais deslumbrante de todo o lago e das montanhas. Uma experiência romântica e inesquecível!</p>
 
           <div class="features-list">
-            <span class="feature-chip">✓ Varanda Panorâmica 360°</span><span class="feature-chip">✓ Cama Box de Casal</span><span class="feature-chip">✓ 2 Camas de Solteiro</span><span class="feature-chip">✓ TV LCD</span><span class="feature-chip">✓ Frigobar</span><span class="feature-chip">✓ Ventilador de Teto</span><span class="feature-chip">✓ Banheiro Privativo</span><span class="feature-chip">✓ Acesso por Rampa de Madeira</span>
+            <span class="feature-chip">✓ Varanda Panorâmica 360°</span><span class="feature-chip">✓ Vista Privilegiada da Lagoa</span><span class="feature-chip">✓ Cama Box de Casal</span><span class="feature-chip">✓ 2 Camas de Solteiro</span><span class="feature-chip">✓ TV LCD</span><span class="feature-chip">✓ Frigobar</span><span class="feature-chip">✓ Ventilador de Teto</span><span class="feature-chip">✓ Banheiro Privativo</span>
           </div>
 
           <a href="https://wa.me/553399989100?text=Ol%C3%A1%21%20Estou%20vendo%20o%20cat%C3%A1logo%20do%20Vale%20Silvestre%20e%20gostaria%20de%20saber%20a%20disponibilidade%20do%20%2AChal%C3%A9%20Panor%C3%A2mico%20%E2%80%94%20Piso%2002%20Superior%2A%21" target="_blank" class="btn-reserve-card">
@@ -578,51 +552,44 @@
       </article>
     
       <article class="room-card" data-category="panoramicos" id="card-panoramico-01">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">Acesso Plano • Varanda com Jardim</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('panoramico-01', 0)">
             <img id="main-img-panoramico-01" src="img/chale-panoramico-piso-01/foto_01.jpg" alt="Chalé Panorâmico — Piso 01 Térreo">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('panoramico-01', 0)">
-            📸 Ver todas as 7 fotos
+            📸 Ver todas as 6 fotos
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 0)">
-            <img src="img/chale-panoramico-piso-01/foto_01.jpg" alt="Fachada dos Chales Panoramicos na Colina">
+            <img src="img/chale-panoramico-piso-01/foto_01.jpg" alt="Fachada dos Chalés Panorâmicos na Colina">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 1)">
-            <img src="img/chale-panoramico-piso-01/foto_02.jpg" alt="Entrada Terreo e Placa Orquidea">
+            <img src="img/chale-panoramico-piso-01/foto_02.jpg" alt="Entrada Térrea com Placa Orquídea">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 2)">
-            <img src="img/chale-panoramico-piso-01/foto_03.jpg" alt="Hall com Poema na Parede e Mesa Rustica">
+            <img src="img/chale-panoramico-piso-01/foto_03.jpg" alt="Hall com Poema e Decoração Rústica">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 3)">
-            <img src="img/chale-panoramico-piso-01/foto_04.jpg" alt="Quarto com Cama Casal e Solteiro">
+            <img src="img/chale-panoramico-piso-01/foto_04.jpg" alt="Quarto Confortável Casal e Solteiro">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 4)">
-            <img src="img/chale-panoramico-piso-01/foto_05.jpg" alt="Quarto Decoracao Romantica com Petalas">
+            <img src="img/chale-panoramico-piso-01/foto_05.jpg" alt="Decoração Romântica Especial">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 5)">
-            <img src="img/chale-panoramico-piso-01/foto_06.jpg" alt="Bancada da Pia Granito Preto">
-          </div>
-        
-          <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 6)">
-            <img src="img/chale-panoramico-piso-01/foto_07.jpg" alt="Banheiro Privativo">
+            <img src="img/chale-panoramico-piso-01/foto_06.jpg" alt="Bancada da Pia com Cestinha de Amenities">
           </div>
         
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: Orquídea e Paraju</span>
@@ -633,7 +600,7 @@
           <p class="room-desc">Conforto absoluto com acesso térreo direto, perfeito para quem busca comodidade e acessibilidade sem escadas. Conta com hall de entrada com poema decorativo, varanda ampla com jardim e vista charmosa.</p>
 
           <div class="features-list">
-            <span class="feature-chip">✓ Acesso Térreo Plano</span><span class="feature-chip">✓ Varanda com Jardim</span><span class="feature-chip">✓ Hall com Poema Rústico</span><span class="feature-chip">✓ Cama Box de Casal</span><span class="feature-chip">✓ 2 Camas de Solteiro</span><span class="feature-chip">✓ TV LCD</span><span class="feature-chip">✓ Frigobar</span><span class="feature-chip">✓ Banheiro Privativo</span><span class="feature-chip">✓ Ventilador</span>
+            <span class="feature-chip">✓ Acesso Térreo Plano (Sem Escadas)</span><span class="feature-chip">✓ Varanda com Jardim</span><span class="feature-chip">✓ Hall com Poema Rústico</span><span class="feature-chip">✓ Cama Box de Casal</span><span class="feature-chip">✓ 2 Camas de Solteiro</span><span class="feature-chip">✓ TV LCD</span><span class="feature-chip">✓ Frigobar</span><span class="feature-chip">✓ Banheiro Privativo</span>
           </div>
 
           <a href="https://wa.me/553399989100?text=Ol%C3%A1%21%20Estou%20vendo%20o%20cat%C3%A1logo%20do%20Vale%20Silvestre%20e%20gostaria%20de%20saber%20a%20disponibilidade%20do%20%2AChal%C3%A9%20Panor%C3%A2mico%20%E2%80%94%20Piso%2001%20T%C3%A9rreo%2A%21" target="_blank" class="btn-reserve-card">
@@ -643,47 +610,40 @@
       </article>
     
       <article class="room-card" data-category="lago" id="card-lago-01">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">Em Frente ao Lago • Quarto e Sala</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('lago-01', 0)">
             <img id="main-img-lago-01" src="img/chale-do-lago-1-quarto/foto_01.jpg" alt="Chalé do Lago — 01 Quarto e Sala">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('lago-01', 0)">
-            📸 Ver todas as 6 fotos
+            📸 Ver todas as 5 fotos
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('lago-01', 0)">
-            <img src="img/chale-do-lago-1-quarto/foto_01.jpg" alt="Varanda Beira do Lago Placa Bouganville">
+            <img src="img/chale-do-lago-1-quarto/foto_01.jpg" alt="Varanda na Beira do Lago">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-01', 1)">
-            <img src="img/chale-do-lago-1-quarto/foto_02.jpg" alt="Sala de Estar com Sofas Cama">
+            <img src="img/chale-do-lago-1-quarto/foto_02.jpg" alt="Vista Geral dos Chalés do Lago">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-01', 2)">
-            <img src="img/chale-do-lago-1-quarto/foto_03.jpg" alt="Bancada Americana e Geladeira">
+            <img src="img/chale-do-lago-1-quarto/foto_03.jpg" alt="Sala de Estar Ampla com Sofás-Cama">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-01', 3)">
-            <img src="img/chale-do-lago-1-quarto/foto_04.jpg" alt="Quarto Cama de Casal e Solteiro">
+            <img src="img/chale-do-lago-1-quarto/foto_04.jpg" alt="Bancada Americana e Geladeira">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-01', 4)">
-            <img src="img/chale-do-lago-1-quarto/foto_05.jpg" alt="Banheiro Privativo">
-          </div>
-        
-          <div class="thumb-item" onclick="setCardPhoto('lago-01', 5)">
-            <img src="img/chale-do-lago-1-quarto/foto_06.jpg" alt="Fachada Geral Chales do Lago">
+            <img src="img/chale-do-lago-1-quarto/foto_05.jpg" alt="Quarto Privativo Casal e Solteiro">
           </div>
         
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: Bouganville</span>
@@ -694,7 +654,7 @@
           <p class="room-desc">Localização paradisíaca às margens da lagoa e coladinho ao restaurante principal. A divisão entre quarto privativo e sala de estar ampla oferece total privacidade aos pais enquanto as crianças dormem confortavelmente na sala. Varanda charmosa de frente para a água!</p>
 
           <div class="features-list">
-            <span class="feature-chip">✓ Em Frente à Lagoa</span><span class="feature-chip">✓ Ao Lado do Restaurante</span><span class="feature-chip">✓ Quarto Privativo</span><span class="feature-chip">✓ Sala de Estar com Sofás-Cama</span><span class="feature-chip">✓ Geladeira Branca</span><span class="feature-chip">✓ Bancada Americana</span><span class="feature-chip">✓ Varanda com Vista da Água</span>
+            <span class="feature-chip">✓ Em Frente à Lagoa</span><span class="feature-chip">✓ Ao Lado do Restaurante</span><span class="feature-chip">✓ Quarto Privativo</span><span class="feature-chip">✓ Sala de Estar com Sofás-Cama</span><span class="feature-chip">✓ Geladeira</span><span class="feature-chip">✓ Bancada Americana</span><span class="feature-chip">✓ Varanda com Vista da Água</span>
           </div>
 
           <a href="https://wa.me/553399989100?text=Ol%C3%A1%21%20Estou%20vendo%20o%20cat%C3%A1logo%20do%20Vale%20Silvestre%20e%20gostaria%20de%20saber%20a%20disponibilidade%20do%20%2AChal%C3%A9%20do%20Lago%20%E2%80%94%2001%20Quarto%20e%20Sala%2A%21" target="_blank" class="btn-reserve-card">
@@ -704,51 +664,44 @@
       </article>
     
       <article class="room-card" data-category="lago" id="card-lago-02">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">Espaço Família • 2 Quartos Privativos</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('lago-02', 0)">
             <img id="main-img-lago-02" src="img/chale-do-lago-2-quartos/foto_01.jpg" alt="Chalé do Lago — 02 Quartos e Sala">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('lago-02', 0)">
-            📸 Ver todas as 7 fotos
+            📸 Ver todas as 6 fotos
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('lago-02', 0)">
-            <img src="img/chale-do-lago-2-quartos/foto_01.jpg" alt="Varanda Externa e Placa Bromelia">
+            <img src="img/chale-do-lago-2-quartos/foto_01.jpg" alt="Varanda Externa com Vista do Lago">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-02', 1)">
-            <img src="img/chale-do-lago-2-quartos/foto_02.jpg" alt="Sala de Estar com Sofas Cama">
+            <img src="img/chale-do-lago-2-quartos/foto_02.jpg" alt="Varanda Privativa na Margem da Lagoa">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-02', 2)">
-            <img src="img/chale-do-lago-2-quartos/foto_03.jpg" alt="Bancada Pia e Frigobar Retro CocaCola">
+            <img src="img/chale-do-lago-2-quartos/foto_03.jpg" alt="Sala de Estar Aconchegante">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-02', 3)">
-            <img src="img/chale-do-lago-2-quartos/foto_04.jpg" alt="Quarto 01 Casal e Solteiro">
+            <img src="img/chale-do-lago-2-quartos/foto_04.jpg" alt="Bancada Americana e Frigobar Retrô">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-02', 4)">
-            <img src="img/chale-do-lago-2-quartos/foto_05.jpg" alt="Quarto 02 Tres Camas Solteiro">
+            <img src="img/chale-do-lago-2-quartos/foto_05.jpg" alt="Quarto Principal Casal com Decoração">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lago-02', 5)">
-            <img src="img/chale-do-lago-2-quartos/foto_06.jpg" alt="Banheiro Privativo">
-          </div>
-        
-          <div class="thumb-item" onclick="setCardPhoto('lago-02', 6)">
-            <img src="img/chale-do-lago-2-quartos/foto_07.jpg" alt="Varanda com Vista para o Lago">
+            <img src="img/chale-do-lago-2-quartos/foto_06.jpg" alt="Segundo Quarto com 3 Camas de Solteiro">
           </div>
         
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: Bromélia e Gameleira</span>
@@ -769,47 +722,40 @@
       </article>
     
       <article class="room-card" data-category="suites" id="card-suite-central">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">Ótimo Custo-Benefício • Localização Central</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('suite-central', 0)">
             <img id="main-img-suite-central" src="img/suite-central/foto_01.jpg" alt="Suíte Central">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('suite-central', 0)">
-            📸 Ver todas as 6 fotos
+            📸 Ver todas as 5 fotos
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('suite-central', 0)">
-            <img src="img/suite-central/foto_01.jpg" alt="Varanda Externa e Placa Brauna">
+            <img src="img/suite-central/foto_01.jpg" alt="Varanda Térrea com Placa Braúna">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('suite-central', 1)">
-            <img src="img/suite-central/foto_02.jpg" alt="Cama de Casal com Almofadas Coracao">
+            <img src="img/suite-central/foto_02.jpg" alt="Cama de Casal com Almofadas de Coração">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('suite-central', 2)">
-            <img src="img/suite-central/foto_03.jpg" alt="Quarto com Camas de Solteiro e TV">
+            <img src="img/suite-central/foto_03.jpg" alt="Quarto Arejado com Camas de Solteiro e TV">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('suite-central', 3)">
-            <img src="img/suite-central/foto_04.jpg" alt="Visao Ampla do Quarto">
+            <img src="img/suite-central/foto_04.jpg" alt="Visão Ampla e Iluminação Natural">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('suite-central', 4)">
-            <img src="img/suite-central/foto_05.jpg" alt="Banheiro Gabinete Madeira">
-          </div>
-        
-          <div class="thumb-item" onclick="setCardPhoto('suite-central', 5)">
-            <img src="img/suite-central/foto_06.jpg" alt="Banheiro Box Blindex">
+            <img src="img/suite-central/foto_05.jpg" alt="Bancada com Gabinete Rústico de Madeira">
           </div>
         
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: Braúna</span>
@@ -820,7 +766,7 @@
           <p class="room-desc">Acomodação acolhedora situada próxima à praça central e ao restaurante. Excelente opção de custo-benefício com cama de casal, duas de solteiro, frigobar, TV LCD e varanda térrea com jardim.</p>
 
           <div class="features-list">
-            <span class="feature-chip">✓ Próxima ao Restaurante</span><span class="feature-chip">✓ Cama de Casal + 2 Solteiro</span><span class="feature-chip">✓ TV LCD</span><span class="feature-chip">✓ Frigobar</span><span class="feature-chip">✓ Banheiro com Gabinete</span><span class="feature-chip">✓ Varanda Térrea</span>
+            <span class="feature-chip">✓ Próxima ao Restaurante</span><span class="feature-chip">✓ Cama de Casal + 2 Solteiro</span><span class="feature-chip">✓ TV LCD</span><span class="feature-chip">✓ Frigobar</span><span class="feature-chip">✓ Banheiro com Gabinete de Madeira</span><span class="feature-chip">✓ Varanda Térrea</span>
           </div>
 
           <a href="https://wa.me/553399989100?text=Ol%C3%A1%21%20Estou%20vendo%20o%20cat%C3%A1logo%20do%20Vale%20Silvestre%20e%20gostaria%20de%20saber%20a%20disponibilidade%20do%20%2ASu%C3%ADte%20Central%2A%21" target="_blank" class="btn-reserve-card">
@@ -830,51 +776,40 @@
       </article>
     
       <article class="room-card" data-category="suites" id="card-suite-mangueira">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">Grande Porte • Até 7 Pessoas</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('suite-mangueira', 0)">
             <img id="main-img-suite-mangueira" src="img/suite-mangueira/foto_01.jpg" alt="Suíte Mangueira">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('suite-mangueira', 0)">
-            📸 Ver todas as 7 fotos
+            📸 Ver todas as 5 fotos
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 0)">
-            <img src="img/suite-mangueira/foto_01.jpg" alt="Fachada e Placa Paca">
+            <img src="img/suite-mangueira/foto_01.jpg" alt="Fachada Rústica com Pintura da Flora">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 1)">
-            <img src="img/suite-mangueira/foto_02.jpg" alt="Quarto Geral Casal e Beliches">
+            <img src="img/suite-mangueira/foto_02.jpg" alt="Entrada Arborizada sob Mangueiras Nativas">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 2)">
-            <img src="img/suite-mangueira/foto_03.jpg" alt="Cama de Casal Principal">
+            <img src="img/suite-mangueira/foto_03.jpg" alt="Quarto Familiar Amplo para até 7 Pessoas">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 3)">
-            <img src="img/suite-mangueira/foto_04.jpg" alt="Beliches de Madeira e Cama Solteiro">
+            <img src="img/suite-mangueira/foto_04.jpg" alt="Cama de Casal com Enxoval Branco">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 4)">
-            <img src="img/suite-mangueira/foto_05.jpg" alt="Bancada da Pia Granito Preto">
-          </div>
-        
-          <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 5)">
-            <img src="img/suite-mangueira/foto_06.jpg" alt="Banheiro Privativo">
-          </div>
-        
-          <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 6)">
-            <img src="img/suite-mangueira/foto_07.jpg" alt="Entrada e Jardim Mangueira">
+            <img src="img/suite-mangueira/foto_05.jpg" alt="Beliches de Madeira Maciça">
           </div>
         
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: Paca e Jaguatirica</span>
@@ -885,7 +820,7 @@
           <p class="room-desc">Suíte espaçosa em meio a uma área verde tranquila e sombreada por mangueiras nativas. Muito confortável para famílias que desejam ficar juntas no mesmo ambiente.</p>
 
           <div class="features-list">
-            <span class="feature-chip">✓ Espaço para até 7 Pessoas</span><span class="feature-chip">✓ 1 Cama Casal + 2 Beliches</span><span class="feature-chip">✓ Pia em Granito Preto</span><span class="feature-chip">✓ Banheiro Privativo</span><span class="feature-chip">✓ Área Verde Tranquila</span>
+            <span class="feature-chip">✓ Espaço para até 7 Pessoas</span><span class="feature-chip">✓ 1 Cama Casal + 2 Beliches</span><span class="feature-chip">✓ Banheiro Privativo</span><span class="feature-chip">✓ Área Verde Tranquila</span><span class="feature-chip">✓ Ideal para Grupos e Famílias</span>
           </div>
 
           <a href="https://wa.me/553399989100?text=Ol%C3%A1%21%20Estou%20vendo%20o%20cat%C3%A1logo%20do%20Vale%20Silvestre%20e%20gostaria%20de%20saber%20a%20disponibilidade%20do%20%2ASu%C3%ADte%20Mangueira%2A%21" target="_blank" class="btn-reserve-card">
@@ -895,7 +830,6 @@
       </article>
     
       <article class="room-card" data-category="lazer" id="card-lazer-natureza">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">Incluso em Todas as Diárias</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('lazer-natureza', 0)">
@@ -906,11 +840,10 @@
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 0)">
-            <img src="img/lazer-natureza/foto_01.jpg" alt="Deck de Madeira sobre o Lago com Varal Luzes">
+            <img src="img/lazer-natureza/foto_01.jpg" alt="Deck de Madeira com Iluminação Noturna">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 1)">
@@ -922,28 +855,27 @@
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 3)">
-            <img src="img/lazer-natureza/foto_04.jpg" alt="Pedalinho Dragao na Lagoa">
+            <img src="img/lazer-natureza/foto_04.jpg" alt="Pedalinho Dragão Divertido">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 4)">
-            <img src="img/lazer-natureza/foto_05.jpg" alt="Ponte Pensil Suspensa sobre o Lago">
+            <img src="img/lazer-natureza/foto_05.jpg" alt="Ponte Pênsil Suspensa">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 5)">
-            <img src="img/lazer-natureza/foto_06.jpg" alt="Pier com Moldura de Coracao Fotos">
+            <img src="img/lazer-natureza/foto_06.jpg" alt="Píer Moldura Coração para Fotos">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 6)">
-            <img src="img/lazer-natureza/foto_07.jpg" alt="Arvore Gigante com Balanco e Pergolados">
+            <img src="img/lazer-natureza/foto_07.jpg" alt="Balanço na Árvore Gigante">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 7)">
-            <img src="img/lazer-natureza/foto_08.jpg" alt="Portaria e Entrada Vale Silvestre Eco Park">
+            <img src="img/lazer-natureza/foto_08.jpg" alt="Portaria do Parque Ecológico">
           </div>
         
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: Parque Ecológico</span>
@@ -964,7 +896,6 @@
       </article>
     
       <article class="room-card" data-category="gastronomia" id="card-gastronomia">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">Pensão Completa Inclusa</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('gastronomia', 0)">
@@ -975,11 +906,10 @@
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('gastronomia', 0)">
-            <img src="img/gastronomia/foto_01.jpg" alt="Buffet Comida Tipica Panelas de Barro">
+            <img src="img/gastronomia/foto_01.jpg" alt="Buffet Mineiro em Panelas de Barro">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('gastronomia', 1)">
@@ -987,24 +917,23 @@
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('gastronomia', 2)">
-            <img src="img/gastronomia/foto_03.jpg" alt="Cafe da Manha Bolos Caseiros do Vale">
+            <img src="img/gastronomia/foto_03.jpg" alt="Café da Manhã com Bolos Caseiros">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('gastronomia', 3)">
-            <img src="img/gastronomia/foto_04.jpg" alt="Bolo de Fuba e Quitandas Mineiras">
+            <img src="img/gastronomia/foto_04.jpg" alt="Quitandas e Bolos Tradicionais">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('gastronomia', 4)">
-            <img src="img/gastronomia/foto_05.jpg" alt="Salao e Varanda do Restaurante">
+            <img src="img/gastronomia/foto_05.jpg" alt="Salão e Varanda do Restaurante">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('gastronomia', 5)">
-            <img src="img/gastronomia/foto_06.jpg" alt="Musica ao Vivo no Quiosque do Almoco">
+            <img src="img/gastronomia/foto_06.jpg" alt="Música ao Vivo no Almoço">
           </div>
         
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: Restaurante do Vale</span>
@@ -1012,7 +941,7 @@
             <span class="capacity-tag">👥 Jantar, Café da Manhã e Almoço Mineiro</span>
           </div>
 
-          <p class="room-desc">A autêntica tradição mineira servida com fartura e carinho! Desfrute de buffet completo com pratos tradicionais servidos em panelas de barro, sobremesas caseiras deliciosas, farto café da manhã com bolos quentinhos e quitandas, além de música ao vivo no almoço aos fins de semana.</p>
+          <p class="room-desc">A autêntica tradição mineira servida com fartura e carinho! Desfrute de buffet completo com pratos tradicionais servidos em panelas de barro, sobremesas caseiras deliciosas, farto café da manhã com bolos artesanais e quitandas, além de música ao vivo no almoço aos fins de semana.</p>
 
           <div class="features-list">
             <span class="feature-chip">✓ Pensão Completa Inclusa</span><span class="feature-chip">✓ Panelas de Barro Tradicionais</span><span class="feature-chip">✓ Sobremesas Típicas</span><span class="feature-chip">✓ Café da Manhã Farto</span><span class="feature-chip">✓ Bolos e Quitandas Caseiras</span><span class="feature-chip">✓ Música ao Vivo aos Fins de Semana</span><span class="feature-chip">✓ Salão e Varanda com Vista</span>
@@ -1027,14 +956,12 @@
     </div>
   </main>
 
-  <!-- FIXED BOTTOM WHATSAPP BAR -->
   <div class="fixed-bottom-bar">
     <a href="https://wa.me/553399989100?text=Ol%C3%A1%21+Estou+vendo+o+cat%C3%A1logo+de+fotos+da+pousada+e+gostaria+de+fazer+uma+reserva%21" target="_blank" class="btn-whatsapp-fixed">
       💬 Falar com a Central de Reservas
     </a>
   </div>
 
-  <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="lightbox-modal">
     <div class="lightbox-top">
       <span id="lbCounter" class="lightbox-counter">1 / 8</span>
@@ -1051,7 +978,6 @@
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <p><strong>Vale Silvestre Eco Park</strong> — Governador Valadares, MG</p>
     <p>Central de Reservas WhatsApp: <a href="https://wa.me/553399989100">(33) 99989-9100</a></p>
@@ -1059,8 +985,7 @@
   </footer>
 
   <script>
-    // Global items map
-    const catalogData = {"panoramico-02": [{"rel_path": "img/chale-panoramico-piso-02/foto_01.jpg", "title": "Fachada e Rampa de Acesso Piso Superior", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_02.jpg", "title": "Porta Superior e Placa Arara", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_03.jpg", "title": "Quarto Casal Coracao Toalha e Petalas", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_04.jpg", "title": "Detalhe Cama com Carta Boas Vindas", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_05.jpg", "title": "Quarto Amplo com Camas Solteiro e TV", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_06.jpg", "title": "Bancada da Pia Decorada com Flores", "clean_name": "foto_06.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_07.jpg", "title": "Varanda de Madeira Mesa sobre a Lagoa", "clean_name": "foto_07.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_08.jpg", "title": "Vista Panoramica Espetacular da Lagoa", "clean_name": "foto_08.jpg"}], "panoramico-01": [{"rel_path": "img/chale-panoramico-piso-01/foto_01.jpg", "title": "Fachada dos Chales Panoramicos na Colina", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_02.jpg", "title": "Entrada Terreo e Placa Orquidea", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_03.jpg", "title": "Hall com Poema na Parede e Mesa Rustica", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_04.jpg", "title": "Quarto com Cama Casal e Solteiro", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_05.jpg", "title": "Quarto Decoracao Romantica com Petalas", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_06.jpg", "title": "Bancada da Pia Granito Preto", "clean_name": "foto_06.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_07.jpg", "title": "Banheiro Privativo", "clean_name": "foto_07.jpg"}], "lago-01": [{"rel_path": "img/chale-do-lago-1-quarto/foto_01.jpg", "title": "Varanda Beira do Lago Placa Bouganville", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_02.jpg", "title": "Sala de Estar com Sofas Cama", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_03.jpg", "title": "Bancada Americana e Geladeira", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_04.jpg", "title": "Quarto Cama de Casal e Solteiro", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_05.jpg", "title": "Banheiro Privativo", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_06.jpg", "title": "Fachada Geral Chales do Lago", "clean_name": "foto_06.jpg"}], "lago-02": [{"rel_path": "img/chale-do-lago-2-quartos/foto_01.jpg", "title": "Varanda Externa e Placa Bromelia", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_02.jpg", "title": "Sala de Estar com Sofas Cama", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_03.jpg", "title": "Bancada Pia e Frigobar Retro CocaCola", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_04.jpg", "title": "Quarto 01 Casal e Solteiro", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_05.jpg", "title": "Quarto 02 Tres Camas Solteiro", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_06.jpg", "title": "Banheiro Privativo", "clean_name": "foto_06.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_07.jpg", "title": "Varanda com Vista para o Lago", "clean_name": "foto_07.jpg"}], "suite-central": [{"rel_path": "img/suite-central/foto_01.jpg", "title": "Varanda Externa e Placa Brauna", "clean_name": "foto_01.jpg"}, {"rel_path": "img/suite-central/foto_02.jpg", "title": "Cama de Casal com Almofadas Coracao", "clean_name": "foto_02.jpg"}, {"rel_path": "img/suite-central/foto_03.jpg", "title": "Quarto com Camas de Solteiro e TV", "clean_name": "foto_03.jpg"}, {"rel_path": "img/suite-central/foto_04.jpg", "title": "Visao Ampla do Quarto", "clean_name": "foto_04.jpg"}, {"rel_path": "img/suite-central/foto_05.jpg", "title": "Banheiro Gabinete Madeira", "clean_name": "foto_05.jpg"}, {"rel_path": "img/suite-central/foto_06.jpg", "title": "Banheiro Box Blindex", "clean_name": "foto_06.jpg"}], "suite-mangueira": [{"rel_path": "img/suite-mangueira/foto_01.jpg", "title": "Fachada e Placa Paca", "clean_name": "foto_01.jpg"}, {"rel_path": "img/suite-mangueira/foto_02.jpg", "title": "Quarto Geral Casal e Beliches", "clean_name": "foto_02.jpg"}, {"rel_path": "img/suite-mangueira/foto_03.jpg", "title": "Cama de Casal Principal", "clean_name": "foto_03.jpg"}, {"rel_path": "img/suite-mangueira/foto_04.jpg", "title": "Beliches de Madeira e Cama Solteiro", "clean_name": "foto_04.jpg"}, {"rel_path": "img/suite-mangueira/foto_05.jpg", "title": "Bancada da Pia Granito Preto", "clean_name": "foto_05.jpg"}, {"rel_path": "img/suite-mangueira/foto_06.jpg", "title": "Banheiro Privativo", "clean_name": "foto_06.jpg"}, {"rel_path": "img/suite-mangueira/foto_07.jpg", "title": "Entrada e Jardim Mangueira", "clean_name": "foto_07.jpg"}], "lazer-natureza": [{"rel_path": "img/lazer-natureza/foto_01.jpg", "title": "Deck de Madeira sobre o Lago com Varal Luzes", "clean_name": "foto_01.jpg"}, {"rel_path": "img/lazer-natureza/foto_02.jpg", "title": "Passeio de Caiaque no Lago", "clean_name": "foto_02.jpg"}, {"rel_path": "img/lazer-natureza/foto_03.jpg", "title": "Pedalinho Cisne na Lagoa", "clean_name": "foto_03.jpg"}, {"rel_path": "img/lazer-natureza/foto_04.jpg", "title": "Pedalinho Dragao na Lagoa", "clean_name": "foto_04.jpg"}, {"rel_path": "img/lazer-natureza/foto_05.jpg", "title": "Ponte Pensil Suspensa sobre o Lago", "clean_name": "foto_05.jpg"}, {"rel_path": "img/lazer-natureza/foto_06.jpg", "title": "Pier com Moldura de Coracao Fotos", "clean_name": "foto_06.jpg"}, {"rel_path": "img/lazer-natureza/foto_07.jpg", "title": "Arvore Gigante com Balanco e Pergolados", "clean_name": "foto_07.jpg"}, {"rel_path": "img/lazer-natureza/foto_08.jpg", "title": "Portaria e Entrada Vale Silvestre Eco Park", "clean_name": "foto_08.jpg"}], "gastronomia": [{"rel_path": "img/gastronomia/foto_01.jpg", "title": "Buffet Comida Tipica Panelas de Barro", "clean_name": "foto_01.jpg"}, {"rel_path": "img/gastronomia/foto_02.jpg", "title": "Pratos Mineiros Tradicionais e Saladas", "clean_name": "foto_02.jpg"}, {"rel_path": "img/gastronomia/foto_03.jpg", "title": "Cafe da Manha Bolos Caseiros do Vale", "clean_name": "foto_03.jpg"}, {"rel_path": "img/gastronomia/foto_04.jpg", "title": "Bolo de Fuba e Quitandas Mineiras", "clean_name": "foto_04.jpg"}, {"rel_path": "img/gastronomia/foto_05.jpg", "title": "Salao e Varanda do Restaurante", "clean_name": "foto_05.jpg"}, {"rel_path": "img/gastronomia/foto_06.jpg", "title": "Musica ao Vivo no Quiosque do Almoco", "clean_name": "foto_06.jpg"}]};
+    const catalogData = {"panoramico-02": [{"rel_path": "img/chale-panoramico-piso-02/foto_01.jpg", "title": "Cama de Casal com Cora\u00e7\u00e3o de P\u00e9talas", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_02.jpg", "title": "Mimo de Boas-Vindas Vale Silvestre", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_03.jpg", "title": "Quarto Amplo e Aconchegante", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_04.jpg", "title": "Bancada da Pia com Flores Naturais", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_05.jpg", "title": "Varanda Panor\u00e2mica Debru\u00e7ada na Lagoa", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_06.jpg", "title": "Vista Espetacular da Lagoa e Natureza", "clean_name": "foto_06.jpg"}], "panoramico-01": [{"rel_path": "img/chale-panoramico-piso-01/foto_01.jpg", "title": "Fachada dos Chal\u00e9s Panor\u00e2micos na Colina", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_02.jpg", "title": "Entrada T\u00e9rrea com Placa Orqu\u00eddea", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_03.jpg", "title": "Hall com Poema e Decora\u00e7\u00e3o R\u00fastica", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_04.jpg", "title": "Quarto Confort\u00e1vel Casal e Solteiro", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_05.jpg", "title": "Decora\u00e7\u00e3o Rom\u00e2ntica Especial", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_06.jpg", "title": "Bancada da Pia com Cestinha de Amenities", "clean_name": "foto_06.jpg"}], "lago-01": [{"rel_path": "img/chale-do-lago-1-quarto/foto_01.jpg", "title": "Varanda na Beira do Lago", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_02.jpg", "title": "Vista Geral dos Chal\u00e9s do Lago", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_03.jpg", "title": "Sala de Estar Ampla com Sof\u00e1s-Cama", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_04.jpg", "title": "Bancada Americana e Geladeira", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_05.jpg", "title": "Quarto Privativo Casal e Solteiro", "clean_name": "foto_05.jpg"}], "lago-02": [{"rel_path": "img/chale-do-lago-2-quartos/foto_01.jpg", "title": "Varanda Externa com Vista do Lago", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_02.jpg", "title": "Varanda Privativa na Margem da Lagoa", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_03.jpg", "title": "Sala de Estar Aconchegante", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_04.jpg", "title": "Bancada Americana e Frigobar Retr\u00f4", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_05.jpg", "title": "Quarto Principal Casal com Decora\u00e7\u00e3o", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_06.jpg", "title": "Segundo Quarto com 3 Camas de Solteiro", "clean_name": "foto_06.jpg"}], "suite-central": [{"rel_path": "img/suite-central/foto_01.jpg", "title": "Varanda T\u00e9rrea com Placa Bra\u00fana", "clean_name": "foto_01.jpg"}, {"rel_path": "img/suite-central/foto_02.jpg", "title": "Cama de Casal com Almofadas de Cora\u00e7\u00e3o", "clean_name": "foto_02.jpg"}, {"rel_path": "img/suite-central/foto_03.jpg", "title": "Quarto Arejado com Camas de Solteiro e TV", "clean_name": "foto_03.jpg"}, {"rel_path": "img/suite-central/foto_04.jpg", "title": "Vis\u00e3o Ampla e Ilumina\u00e7\u00e3o Natural", "clean_name": "foto_04.jpg"}, {"rel_path": "img/suite-central/foto_05.jpg", "title": "Bancada com Gabinete R\u00fastico de Madeira", "clean_name": "foto_05.jpg"}], "suite-mangueira": [{"rel_path": "img/suite-mangueira/foto_01.jpg", "title": "Fachada R\u00fastica com Pintura da Flora", "clean_name": "foto_01.jpg"}, {"rel_path": "img/suite-mangueira/foto_02.jpg", "title": "Entrada Arborizada sob Mangueiras Nativas", "clean_name": "foto_02.jpg"}, {"rel_path": "img/suite-mangueira/foto_03.jpg", "title": "Quarto Familiar Amplo para at\u00e9 7 Pessoas", "clean_name": "foto_03.jpg"}, {"rel_path": "img/suite-mangueira/foto_04.jpg", "title": "Cama de Casal com Enxoval Branco", "clean_name": "foto_04.jpg"}, {"rel_path": "img/suite-mangueira/foto_05.jpg", "title": "Beliches de Madeira Maci\u00e7a", "clean_name": "foto_05.jpg"}], "lazer-natureza": [{"rel_path": "img/lazer-natureza/foto_01.jpg", "title": "Deck de Madeira com Ilumina\u00e7\u00e3o Noturna", "clean_name": "foto_01.jpg"}, {"rel_path": "img/lazer-natureza/foto_02.jpg", "title": "Passeio de Caiaque no Lago", "clean_name": "foto_02.jpg"}, {"rel_path": "img/lazer-natureza/foto_03.jpg", "title": "Pedalinho Cisne na Lagoa", "clean_name": "foto_03.jpg"}, {"rel_path": "img/lazer-natureza/foto_04.jpg", "title": "Pedalinho Drag\u00e3o Divertido", "clean_name": "foto_04.jpg"}, {"rel_path": "img/lazer-natureza/foto_05.jpg", "title": "Ponte P\u00eansil Suspensa", "clean_name": "foto_05.jpg"}, {"rel_path": "img/lazer-natureza/foto_06.jpg", "title": "P\u00eder Moldura Cora\u00e7\u00e3o para Fotos", "clean_name": "foto_06.jpg"}, {"rel_path": "img/lazer-natureza/foto_07.jpg", "title": "Balan\u00e7o na \u00c1rvore Gigante", "clean_name": "foto_07.jpg"}, {"rel_path": "img/lazer-natureza/foto_08.jpg", "title": "Portaria do Parque Ecol\u00f3gico", "clean_name": "foto_08.jpg"}], "gastronomia": [{"rel_path": "img/gastronomia/foto_01.jpg", "title": "Buffet Mineiro em Panelas de Barro", "clean_name": "foto_01.jpg"}, {"rel_path": "img/gastronomia/foto_02.jpg", "title": "Pratos Mineiros Tradicionais e Saladas", "clean_name": "foto_02.jpg"}, {"rel_path": "img/gastronomia/foto_03.jpg", "title": "Caf\u00e9 da Manh\u00e3 com Bolos Caseiros", "clean_name": "foto_03.jpg"}, {"rel_path": "img/gastronomia/foto_04.jpg", "title": "Quitandas e Bolos Tradicionais", "clean_name": "foto_04.jpg"}, {"rel_path": "img/gastronomia/foto_05.jpg", "title": "Sal\u00e3o e Varanda do Restaurante", "clean_name": "foto_05.jpg"}, {"rel_path": "img/gastronomia/foto_06.jpg", "title": "M\u00fasica ao Vivo no Almo\u00e7o", "clean_name": "foto_06.jpg"}]};
     let activeCardId = null;
     let activeIndex = 0;
 
@@ -1118,7 +1043,6 @@
       if (e.key === 'ArrowRight') nextPhoto();
     });
 
-    // Touch Swipe Support for Lightbox
     let touchStartX = 0;
     let touchEndX = 0;
     const lbModal = document.getElementById('lightbox');
@@ -1135,7 +1059,6 @@
       if (touchEndX > touchStartX + 50) prevPhoto();
     }
 
-    // Category Filter
     function filterCategory(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');

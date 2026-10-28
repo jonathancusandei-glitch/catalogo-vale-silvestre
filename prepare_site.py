@@ -2,14 +2,14 @@ import os
 import shutil
 import html
 import urllib.parse
+import json
 
 src_base = r"G:\Meu Drive\01 - Profissional e Negócios\Vale Silvestre\Fotos_Selecionadas_Desbravador_Site\00_Selecao_Resumida_Para_Envio"
 site_dir = r"C:\Users\danie\vale-silvestre-catalogo"
 img_dest_root = os.path.join(site_dir, "img")
 
-os.makedirs(img_dest_root, exist_ok=True)
-
-# Accommodation Catalog Definition for Clients (Zero internal codes!)
+# Accommodation Catalog Definition - Curated strictly after Viviane's inspection
+# Filtered out: dirty floors, bathroom trash, rotated images
 items = [
     {
         "id": "panoramico-02",
@@ -20,9 +20,18 @@ items = [
         "door_sign": "Arara",
         "capacity": "Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
         "desc": "Localizado no ponto mais nobre da colina com rampa suave de madeira. Possui pé-direito alto, ambiente super arejado e uma varanda panorâmica de madeira privativa com a vista mais deslumbrante de todo o lago e das montanhas. Uma experiência romântica e inesquecível!",
-        "features": ["Varanda Panorâmica 360°", "Cama Box de Casal", "2 Camas de Solteiro", "TV LCD", "Frigobar", "Ventilador de Teto", "Banheiro Privativo", "Acesso por Rampa de Madeira"],
+        "features": ["Varanda Panorâmica 360°", "Vista Privilegiada da Lagoa", "Cama Box de Casal", "2 Camas de Solteiro", "TV LCD", "Frigobar", "Ventilador de Teto", "Banheiro Privativo"],
         "src_folder": "06_Chale_Panoramico_Piso_02",
-        "dest_folder": "chale-panoramico-piso-02"
+        "dest_folder": "chale-panoramico-piso-02",
+        # Only clean, magazine-standard photos:
+        "allowed_files": [
+            ("03_Quarto_Casal_Coracao_Toalha_e_Petalas.jpg", "Cama de Casal com Coração de Pétalas"),
+            ("04_Detalhe_Cama_com_Carta_Boas_Vindas.jpg", "Mimo de Boas-Vindas Vale Silvestre"),
+            ("05_Quarto_Amplo_com_Camas_Solteiro_e_TV.jpg", "Quarto Amplo e Aconchegante"),
+            ("06_Bancada_da_Pia_Decorada_com_Flores.jpg", "Bancada da Pia com Flores Naturais"),
+            ("07_Varanda_de_Madeira_Mesa_sobre_a_Lagoa.jpg", "Varanda Panorâmica Debruçada na Lagoa"),
+            ("08_Vista_Panoramica_Espetacular_da_Lagoa.jpg", "Vista Espetacular da Lagoa e Natureza")
+        ]
     },
     {
         "id": "panoramico-01",
@@ -33,9 +42,18 @@ items = [
         "door_sign": "Orquídea e Paraju",
         "capacity": "Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
         "desc": "Conforto absoluto com acesso térreo direto, perfeito para quem busca comodidade e acessibilidade sem escadas. Conta com hall de entrada com poema decorativo, varanda ampla com jardim e vista charmosa.",
-        "features": ["Acesso Térreo Plano", "Varanda com Jardim", "Hall com Poema Rústico", "Cama Box de Casal", "2 Camas de Solteiro", "TV LCD", "Frigobar", "Banheiro Privativo", "Ventilador"],
+        "features": ["Acesso Térreo Plano (Sem Escadas)", "Varanda com Jardim", "Hall com Poema Rústico", "Cama Box de Casal", "2 Camas de Solteiro", "TV LCD", "Frigobar", "Banheiro Privativo"],
         "src_folder": "05_Chale_Panoramico_Piso_01",
-        "dest_folder": "chale-panoramico-piso-01"
+        "dest_folder": "chale-panoramico-piso-01",
+        # Filtered out: 07_Banheiro_Privativo (rotated)
+        "allowed_files": [
+            ("01_Fachada_dos_Chales_Panoramicos_na_Colina.jpg", "Fachada dos Chalés Panorâmicos na Colina"),
+            ("02_Entrada_Terreo_e_Placa_Orquidea.jpg", "Entrada Térrea com Placa Orquídea"),
+            ("03_Hall_com_Poema_na_Parede_e_Mesa_Rustica.jpg", "Hall com Poema e Decoração Rústica"),
+            ("04_Quarto_com_Cama_Casal_e_Solteiro.jpg", "Quarto Confortável Casal e Solteiro"),
+            ("05_Quarto_Decoracao_Romantica_com_Petalas.jpg", "Decoração Romântica Especial"),
+            ("06_Bancada_da_Pia_Granito_Preto.jpg", "Bancada da Pia com Cestinha de Amenities")
+        ]
     },
     {
         "id": "lago-01",
@@ -46,9 +64,17 @@ items = [
         "door_sign": "Bouganville",
         "capacity": "Até 5 pessoas (Quarto com cama de casal + solteiro | Sala com 2 sofás-cama)",
         "desc": "Localização paradisíaca às margens da lagoa e coladinho ao restaurante principal. A divisão entre quarto privativo e sala de estar ampla oferece total privacidade aos pais enquanto as crianças dormem confortavelmente na sala. Varanda charmosa de frente para a água!",
-        "features": ["Em Frente à Lagoa", "Ao Lado do Restaurante", "Quarto Privativo", "Sala de Estar com Sofás-Cama", "Geladeira Branca", "Bancada Americana", "Varanda com Vista da Água"],
+        "features": ["Em Frente à Lagoa", "Ao Lado do Restaurante", "Quarto Privativo", "Sala de Estar com Sofás-Cama", "Geladeira", "Bancada Americana", "Varanda com Vista da Água"],
         "src_folder": "03_Chale_do_Lago_Quarto_e_Sala",
-        "dest_folder": "chale-do-lago-1-quarto"
+        "dest_folder": "chale-do-lago-1-quarto",
+        # Filtered out: 05_Banheiro (dusty floor/trash)
+        "allowed_files": [
+            ("01_Varanda_Beira_do_Lago_Placa_Bouganville.jpg", "Varanda na Beira do Lago"),
+            ("06_Fachada_Geral_Chales_do_Lago.jpg", "Vista Geral dos Chalés do Lago"),
+            ("02_Sala_de_Estar_com_Sofas_Cama.jpg", "Sala de Estar Ampla com Sofás-Cama"),
+            ("03_Bancada_Americana_e_Geladeira.jpg", "Bancada Americana e Geladeira"),
+            ("04_Quarto_Cama_de_Casal_e_Solteiro.jpg", "Quarto Privativo Casal e Solteiro")
+        ]
     },
     {
         "id": "lago-02",
@@ -61,7 +87,16 @@ items = [
         "desc": "A maior acomodação da pousada, projetada com carinho para famílias grandes ou pequenos grupos. Conta com dois dormitórios independentes, sala espaçosa com sofás-cama, frigobar retrô Coca-Cola e varanda com brisa refrescante do lago.",
         "features": ["2 Quartos Privativos", "Acomoda até 7 Pessoas", "Sala com Sofás-Cama", "Frigobar Retrô Coca-Cola", "Bancada e Pia", "Varanda na Beira do Lago", "Excelente Conforto"],
         "src_folder": "04_Chale_do_Lago_2_Quartos_e_Sala",
-        "dest_folder": "chale-do-lago-2-quartos"
+        "dest_folder": "chale-do-lago-2-quartos",
+        # REMOVED: 06_Banheiro_Privativo (toilet with trash bag on seat lid!)
+        "allowed_files": [
+            ("01_Varanda_Externa_e_Placa_Bromelia.jpg", "Varanda Externa com Vista do Lago"),
+            ("07_Varanda_com_Vista_para_o_Lago.jpg", "Varanda Privativa na Margem da Lagoa"),
+            ("02_Sala_de_Estar_com_Sofas_Cama.jpg", "Sala de Estar Aconchegante"),
+            ("03_Bancada_Pia_e_Frigobar_Retro_CocaCola.jpg", "Bancada Americana e Frigobar Retrô"),
+            ("04_Quarto_01_Casal_e_Solteiro.jpg", "Quarto Principal Casal com Decoração"),
+            ("05_Quarto_02_Tres_Camas_Solteiro.jpg", "Segundo Quarto com 3 Camas de Solteiro")
+        ]
     },
     {
         "id": "suite-central",
@@ -72,9 +107,17 @@ items = [
         "door_sign": "Braúna",
         "capacity": "Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
         "desc": "Acomodação acolhedora situada próxima à praça central e ao restaurante. Excelente opção de custo-benefício com cama de casal, duas de solteiro, frigobar, TV LCD e varanda térrea com jardim.",
-        "features": ["Próxima ao Restaurante", "Cama de Casal + 2 Solteiro", "TV LCD", "Frigobar", "Banheiro com Gabinete", "Varanda Térrea"],
+        "features": ["Próxima ao Restaurante", "Cama de Casal + 2 Solteiro", "TV LCD", "Frigobar", "Banheiro com Gabinete de Madeira", "Varanda Térrea"],
         "src_folder": "02_Suite_Central",
-        "dest_folder": "suite-central"
+        "dest_folder": "suite-central",
+        # Filtered out: 06_Banheiro_Box_Blindex (rotated sideways)
+        "allowed_files": [
+            ("01_Varanda_Externa_e_Placa_Brauna.jpg", "Varanda Térrea com Placa Braúna"),
+            ("02_Cama_de_Casal_com_Almofadas_Coracao.jpg", "Cama de Casal com Almofadas de Coração"),
+            ("03_Quarto_com_Camas_de_Solteiro_e_TV.jpg", "Quarto Arejado com Camas de Solteiro e TV"),
+            ("04_Visao_Ampla_do_Quarto.jpg", "Visão Ampla e Iluminação Natural"),
+            ("05_Banheiro_Gabinete_Madeira.jpg", "Bancada com Gabinete Rústico de Madeira")
+        ]
     },
     {
         "id": "suite-mangueira",
@@ -85,9 +128,17 @@ items = [
         "door_sign": "Paca e Jaguatirica",
         "capacity": "Casal + 2 beliches de madeira + 1 solteiro (acomoda até 7 pessoas)",
         "desc": "Suíte espaçosa em meio a uma área verde tranquila e sombreada por mangueiras nativas. Muito confortável para famílias que desejam ficar juntas no mesmo ambiente.",
-        "features": ["Espaço para até 7 Pessoas", "1 Cama Casal + 2 Beliches", "Pia em Granito Preto", "Banheiro Privativo", "Área Verde Tranquila"],
+        "features": ["Espaço para até 7 Pessoas", "1 Cama Casal + 2 Beliches", "Banheiro Privativo", "Área Verde Tranquila", "Ideal para Grupos e Famílias"],
         "src_folder": "01_Suite_Mangueira",
-        "dest_folder": "suite-mangueira"
+        "dest_folder": "suite-mangueira",
+        # REMOVED: 05_Bancada_da_Pia (dirty footprints on floor & bucket) and 06_Banheiro (dusty floor)
+        "allowed_files": [
+            ("01_Fachada_e_Placa_Paca.jpg", "Fachada Rústica com Pintura da Flora"),
+            ("07_Entrada_e_Jardim_Mangueira.jpg", "Entrada Arborizada sob Mangueiras Nativas"),
+            ("02_Quarto_Geral_Casal_e_Beliches.jpg", "Quarto Familiar Amplo para até 7 Pessoas"),
+            ("03_Cama_de_Casal_Principal.jpg", "Cama de Casal com Enxoval Branco"),
+            ("04_Beliches_de_Madeira_e_Cama_Solteiro.jpg", "Beliches de Madeira Maciça")
+        ]
     },
     {
         "id": "lazer-natureza",
@@ -100,7 +151,17 @@ items = [
         "desc": "Viva momentos mágicos ao ar livre! O parque oferece passeios livres de caiaque e pedalinhos (cisne e dragão), ponte pênsil suspensa, deck com iluminação noturna, píer com moldura de coração para fotos, balanço na árvore gigante, pesca esportiva e trilhas ecológicas.",
         "features": ["Passeio de Caiaque", "Pedalinho Cisne & Dragão", "Deck Panorâmico Iluminado", "Ponte Pênsil Suspensa", "Píer Moldura Coração", "Balanço na Árvore Gigante", "Pesca Esportiva", "Trilhas Ecológicas"],
         "src_folder": "08_Lazer_Lagoa_Deck_e_Natureza",
-        "dest_folder": "lazer-natureza"
+        "dest_folder": "lazer-natureza",
+        "allowed_files": [
+            ("01_Deck_de_Madeira_sobre_o_Lago_com_Varal_Luzes.jpg", "Deck de Madeira com Iluminação Noturna"),
+            ("02_Passeio_de_Caiaque_no_Lago.jpg", "Passeio de Caiaque no Lago"),
+            ("03_Pedalinho_Cisne_na_Lagoa.jpg", "Pedalinho Cisne na Lagoa"),
+            ("04_Pedalinho_Dragao_na_Lagoa.jpg", "Pedalinho Dragão Divertido"),
+            ("05_Ponte_Pensil_Suspensa_sobre_o_Lago.jpg", "Ponte Pênsil Suspensa"),
+            ("06_Pier_com_Moldura_de_Coracao_Fotos.jpg", "Píer Moldura Coração para Fotos"),
+            ("07_Arvore_Gigante_com_Balanco_e_Pergolados.jpg", "Balanço na Árvore Gigante"),
+            ("08_Portaria_e_Entrada_Vale_Silvestre_Eco_Park.jpg", "Portaria do Parque Ecológico")
+        ]
     },
     {
         "id": "gastronomia",
@@ -110,47 +171,47 @@ items = [
         "title": "Gastronomia Mineira & Restaurante",
         "door_sign": "Restaurante do Vale",
         "capacity": "Jantar, Café da Manhã e Almoço Mineiro",
-        "desc": "A autêntica tradição mineira servida com fartura e carinho! Desfrute de buffet completo com pratos tradicionais servidos em panelas de barro, sobremesas caseiras deliciosas, farto café da manhã com bolos quentinhos e quitandas, além de música ao vivo no almoço aos fins de semana.",
+        "desc": "A autêntica tradição mineira servida com fartura e carinho! Desfrute de buffet completo com pratos tradicionais servidos em panelas de barro, sobremesas caseiras deliciosas, farto café da manhã com bolos artesanais e quitandas, além de música ao vivo no almoço aos fins de semana.",
         "features": ["Pensão Completa Inclusa", "Panelas de Barro Tradicionais", "Sobremesas Típicas", "Café da Manhã Farto", "Bolos e Quitandas Caseiras", "Música ao Vivo aos Fins de Semana", "Salão e Varanda com Vista"],
         "src_folder": "09_Gastronomia_Restaurante_Buffet",
-        "dest_folder": "gastronomia"
+        "dest_folder": "gastronomia",
+        "allowed_files": [
+            ("01_Buffet_Comida_Tipica_Panelas_de_Barro.jpg", "Buffet Mineiro em Panelas de Barro"),
+            ("02_Pratos_Mineiros_Tradicionais_e_Saladas.jpg", "Pratos Mineiros Tradicionais e Saladas"),
+            ("03_Cafe_da_Manha_Bolos_Caseiros_do_Vale.jpg", "Café da Manhã com Bolos Caseiros"),
+            ("04_Bolo_de_Fuba_e_Quitandas_Mineiras.jpg", "Quitandas e Bolos Tradicionais"),
+            ("05_Salao_e_Varanda_do_Restaurante.jpg", "Salão e Varanda do Restaurante"),
+            ("06_Musica_ao_Vivo_no_Quiosque_do_Almoco.jpg", "Música ao Vivo no Almoço")
+        ]
     }
 ]
 
-# Copy and rename images
-print("Copying and organizing images...")
+print("Applying Viviane housekeeping standards to photos...")
 for item in items:
     src_dir = os.path.join(src_base, item["src_folder"])
     dest_dir = os.path.join(img_dest_root, item["dest_folder"])
+    
+    if os.path.exists(dest_dir):
+        shutil.rmtree(dest_dir)
     os.makedirs(dest_dir, exist_ok=True)
     
     item_photos = []
-    if os.path.exists(src_dir):
-        files = sorted([f for f in os.listdir(src_dir) if f.lower().endswith(('.jpg', '.jpeg', '.png'))])
-        for idx, f in enumerate(files, 1):
-            src_file = os.path.join(src_dir, f)
-            ext = os.path.splitext(f)[1].lower()
-            clean_name = f"foto_{idx:02d}{ext}"
+    for idx, (orig_file, title) in enumerate(item["allowed_files"], 1):
+        src_file = os.path.join(src_dir, orig_file)
+        if os.path.exists(src_file):
+            clean_name = f"foto_{idx:02d}.jpg"
             dest_file = os.path.join(dest_dir, clean_name)
             shutil.copy2(src_file, dest_file)
-            
-            # readable title from original name
-            title_part = os.path.splitext(f)[0].replace('_', ' ')
-            # remove leading numbers like '01 '
-            if title_part[:2].isdigit() and title_part[2:3] == ' ':
-                title_part = title_part[3:]
-                
             item_photos.append({
                 "rel_path": f"img/{item['dest_folder']}/{clean_name}",
-                "title": title_part,
+                "title": title,
                 "clean_name": clean_name
             })
+        else:
+            print(f"WARNING: File not found: {src_file}")
+            
     item["photos"] = item_photos
-    print(f"Copied {len(item_photos)} photos for {item['title']}")
-
-print("All photos copied successfully!")
-
-import json
+    print(f"Curated {len(item_photos)} approved photos for {item['title']}")
 
 # Generate index.html
 html_template = """<!DOCTYPE html>
@@ -188,11 +249,10 @@ html_template = """<!DOCTYPE html>
       background-color: var(--bg);
       color: var(--text);
       line-height: 1.5;
-      padding-bottom: 90px; /* Space for fixed bottom bar */
+      padding-bottom: 90px;
       overflow-x: hidden;
     }
 
-    /* Container */
     .container {
       width: 100%;
       max-width: 860px;
@@ -200,7 +260,6 @@ html_template = """<!DOCTYPE html>
       padding: 0 16px;
     }
 
-    /* Top Brand Header */
     .hero-header {
       background: radial-gradient(circle at top, #162238 0%, #0a0f18 100%);
       padding: 32px 16px 20px;
@@ -255,7 +314,6 @@ html_template = """<!DOCTYPE html>
       gap: 6px;
     }
 
-    /* Sticky Navigation Filters */
     .sticky-filter-wrapper {
       position: sticky;
       top: 0;
@@ -294,7 +352,6 @@ html_template = """<!DOCTYPE html>
       box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
     }
 
-    /* Cards Feed */
     .catalog-feed {
       margin-top: 20px;
       display: flex;
@@ -311,7 +368,6 @@ html_template = """<!DOCTYPE html>
       transition: transform 0.2s;
     }
 
-    /* Carousel / Main Image */
     .card-gallery-wrap {
       position: relative;
       background: #000;
@@ -372,7 +428,6 @@ html_template = """<!DOCTYPE html>
       cursor: pointer;
     }
 
-    /* Thumbnails Row */
     .thumbs-row {
       display: flex;
       gap: 6px;
@@ -403,7 +458,6 @@ html_template = """<!DOCTYPE html>
       display: block;
     }
 
-    /* Card Body */
     .card-body {
       padding: 20px;
     }
@@ -447,7 +501,6 @@ html_template = """<!DOCTYPE html>
       margin: 10px 0 16px;
     }
 
-    /* Features Grid */
     .features-list {
       display: flex;
       flex-wrap: wrap;
@@ -466,7 +519,6 @@ html_template = """<!DOCTYPE html>
       gap: 5px;
     }
 
-    /* Card Action Button */
     .btn-reserve-card {
       display: flex;
       align-items: center;
@@ -489,7 +541,6 @@ html_template = """<!DOCTYPE html>
       box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
     }
 
-    /* Fixed Bottom Conversion Bar (Mobile) */
     .fixed-bottom-bar {
       position: fixed;
       bottom: 0;
@@ -528,7 +579,6 @@ html_template = """<!DOCTYPE html>
       100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
-    /* Lightbox Modal */
     .lightbox-modal {
       display: none;
       position: fixed;
@@ -617,7 +667,6 @@ html_template = """<!DOCTYPE html>
       color: var(--text-muted);
     }
 
-    /* Footer */
     .site-footer {
       text-align: center;
       padding: 36px 16px 20px;
@@ -631,7 +680,6 @@ html_template = """<!DOCTYPE html>
 </head>
 <body>
 
-  <!-- HERO HEADER -->
   <header class="hero-header">
     <div class="badge-nature">🌿 Refúgio Ecológico & Lazer</div>
     <h1 class="hero-title">Vale Silvestre Eco Park</h1>
@@ -645,7 +693,6 @@ html_template = """<!DOCTYPE html>
     </div>
   </header>
 
-  <!-- STICKY FILTER BAR -->
   <div class="sticky-filter-wrapper">
     <div class="container">
       <div class="filter-scroll">
@@ -659,22 +706,18 @@ html_template = """<!DOCTYPE html>
     </div>
   </div>
 
-  <!-- CATALOG FEED -->
   <main class="container">
     <div class="catalog-feed" id="catalogFeed">
 """
 
-# Render Each Accommodation Card
 for item in items:
     photos_json = json.dumps(item["photos"])
     features_html = "".join([f'<span class="feature-chip">✓ {html.escape(f)}</span>' for f in item["features"]])
     first_photo = item["photos"][0]["rel_path"] if item["photos"] else ""
     
-    # WhatsApp direct message
     msg_encoded = urllib.parse.quote(f"Olá! Estou vendo o catálogo do Vale Silvestre e gostaria de saber a disponibilidade do *{item['title']}*!")
     wa_url = f"https://wa.me/553399989100?text={msg_encoded}"
     
-    # Thumbnails row
     thumbs_html = ""
     for idx, p in enumerate(item["photos"]):
         thumbs_html += f"""
@@ -685,7 +728,6 @@ for item in items:
         
     html_template += f"""
       <article class="room-card" data-category="{item['category']}" id="card-{item['id']}">
-        <!-- Top Media -->
         <div class="card-gallery-wrap">
           <span class="top-badge">{html.escape(item['badge'])}</span>
           <div class="main-photo-link" onclick="openLightboxFromCard('{item['id']}', 0)">
@@ -696,12 +738,10 @@ for item in items:
           </button>
         </div>
 
-        <!-- Thumbnails strip -->
         <div class="thumbs-row">
           {thumbs_html}
         </div>
 
-        <!-- Card Info -->
         <div class="card-body">
           <div class="card-header-info">
             <span class="door-sign-tag">🏷️ Placa na Porta: {html.escape(item['door_sign'])}</span>
@@ -722,19 +762,16 @@ for item in items:
       </article>
     """
 
-# Footer and JS
 html_template += """
     </div>
   </main>
 
-  <!-- FIXED BOTTOM WHATSAPP BAR -->
   <div class="fixed-bottom-bar">
     <a href="https://wa.me/553399989100?text=Ol%C3%A1%21+Estou+vendo+o+cat%C3%A1logo+de+fotos+da+pousada+e+gostaria+de+fazer+uma+reserva%21" target="_blank" class="btn-whatsapp-fixed">
       💬 Falar com a Central de Reservas
     </a>
   </div>
 
-  <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="lightbox-modal">
     <div class="lightbox-top">
       <span id="lbCounter" class="lightbox-counter">1 / 8</span>
@@ -751,7 +788,6 @@ html_template += """
     </div>
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
     <p><strong>Vale Silvestre Eco Park</strong> — Governador Valadares, MG</p>
     <p>Central de Reservas WhatsApp: <a href="https://wa.me/553399989100">(33) 99989-9100</a></p>
@@ -759,7 +795,6 @@ html_template += """
   </footer>
 
   <script>
-    // Global items map
     const catalogData = """ + json.dumps({item["id"]: item["photos"] for item in items}) + """;
     let activeCardId = null;
     let activeIndex = 0;
@@ -818,7 +853,6 @@ html_template += """
       if (e.key === 'ArrowRight') nextPhoto();
     });
 
-    // Touch Swipe Support for Lightbox
     let touchStartX = 0;
     let touchEndX = 0;
     const lbModal = document.getElementById('lightbox');
@@ -835,7 +869,6 @@ html_template += """
       if (touchEndX > touchStartX + 50) prevPhoto();
     }
 
-    // Category Filter
     function filterCategory(cat, btn) {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
@@ -856,4 +889,4 @@ html_template += """
 with open(os.path.join(site_dir, "index.html"), "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print("SUCCESS! Generated mobile-friendly client website in index.html!")
+print("SUCCESS! Generated mobile-friendly client website in index.html with Viviane's standards!")
