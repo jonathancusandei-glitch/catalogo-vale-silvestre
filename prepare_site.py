@@ -9,7 +9,6 @@ site_dir = r"C:\Users\danie\vale-silvestre-catalogo"
 img_dest_root = os.path.join(site_dir, "img")
 
 # Accommodation Catalog Definition - Curated strictly after Viviane's inspection
-# Filtered out: dirty floors, bathroom trash, rotated images
 items = [
     {
         "id": "panoramico-02",
@@ -23,7 +22,6 @@ items = [
         "features": ["Varanda Panorâmica 360°", "Vista Privilegiada da Lagoa", "Cama Box de Casal", "2 Camas de Solteiro", "TV LCD", "Frigobar", "Ventilador de Teto", "Banheiro Privativo"],
         "src_folder": "06_Chale_Panoramico_Piso_02",
         "dest_folder": "chale-panoramico-piso-02",
-        # Only clean, magazine-standard photos:
         "allowed_files": [
             ("03_Quarto_Casal_Coracao_Toalha_e_Petalas.jpg", "Cama de Casal com Coração de Pétalas"),
             ("04_Detalhe_Cama_com_Carta_Boas_Vindas.jpg", "Mimo de Boas-Vindas Vale Silvestre"),
@@ -45,7 +43,6 @@ items = [
         "features": ["Acesso Térreo Plano (Sem Escadas)", "Varanda com Jardim", "Hall com Poema Rústico", "Cama Box de Casal", "2 Camas de Solteiro", "TV LCD", "Frigobar", "Banheiro Privativo"],
         "src_folder": "05_Chale_Panoramico_Piso_01",
         "dest_folder": "chale-panoramico-piso-01",
-        # Filtered out: 07_Banheiro_Privativo (rotated)
         "allowed_files": [
             ("01_Fachada_dos_Chales_Panoramicos_na_Colina.jpg", "Fachada dos Chalés Panorâmicos na Colina"),
             ("02_Entrada_Terreo_e_Placa_Orquidea.jpg", "Entrada Térrea com Placa Orquídea"),
@@ -67,7 +64,6 @@ items = [
         "features": ["Em Frente à Lagoa", "Ao Lado do Restaurante", "Quarto Privativo", "Sala de Estar com Sofás-Cama", "Geladeira", "Bancada Americana", "Varanda com Vista da Água"],
         "src_folder": "03_Chale_do_Lago_Quarto_e_Sala",
         "dest_folder": "chale-do-lago-1-quarto",
-        # Filtered out: 05_Banheiro (dusty floor/trash)
         "allowed_files": [
             ("01_Varanda_Beira_do_Lago_Placa_Bouganville.jpg", "Varanda na Beira do Lago"),
             ("06_Fachada_Geral_Chales_do_Lago.jpg", "Vista Geral dos Chalés do Lago"),
@@ -88,7 +84,6 @@ items = [
         "features": ["2 Quartos Privativos", "Acomoda até 7 Pessoas", "Sala com Sofás-Cama", "Frigobar Retrô Coca-Cola", "Bancada e Pia", "Varanda na Beira do Lago", "Excelente Conforto"],
         "src_folder": "04_Chale_do_Lago_2_Quartos_e_Sala",
         "dest_folder": "chale-do-lago-2-quartos",
-        # REMOVED: 06_Banheiro_Privativo (toilet with trash bag on seat lid!)
         "allowed_files": [
             ("01_Varanda_Externa_e_Placa_Bromelia.jpg", "Varanda Externa com Vista do Lago"),
             ("07_Varanda_com_Vista_para_o_Lago.jpg", "Varanda Privativa na Margem da Lagoa"),
@@ -110,7 +105,6 @@ items = [
         "features": ["Próxima ao Restaurante", "Cama de Casal + 2 Solteiro", "TV LCD", "Frigobar", "Banheiro com Gabinete de Madeira", "Varanda Térrea"],
         "src_folder": "02_Suite_Central",
         "dest_folder": "suite-central",
-        # Filtered out: 06_Banheiro_Box_Blindex (rotated sideways)
         "allowed_files": [
             ("01_Varanda_Externa_e_Placa_Brauna.jpg", "Varanda Térrea com Placa Braúna"),
             ("02_Cama_de_Casal_com_Almofadas_Coracao.jpg", "Cama de Casal com Almofadas de Coração"),
@@ -131,7 +125,6 @@ items = [
         "features": ["Espaço para até 7 Pessoas", "1 Cama Casal + 2 Beliches", "Banheiro Privativo", "Área Verde Tranquila", "Ideal para Grupos e Famílias"],
         "src_folder": "01_Suite_Mangueira",
         "dest_folder": "suite-mangueira",
-        # REMOVED: 05_Bancada_da_Pia (dirty footprints on floor & bucket) and 06_Banheiro (dusty floor)
         "allowed_files": [
             ("01_Fachada_e_Placa_Paca.jpg", "Fachada Rústica com Pintura da Flora"),
             ("07_Entrada_e_Jardim_Mangueira.jpg", "Entrada Arborizada sob Mangueiras Nativas"),
@@ -186,70 +179,70 @@ items = [
     }
 ]
 
-print("Applying Viviane housekeeping standards to photos...")
+# Copy approved photos
 for item in items:
     src_dir = os.path.join(src_base, item["src_folder"])
     dest_dir = os.path.join(img_dest_root, item["dest_folder"])
-    
-    if os.path.exists(dest_dir):
-        shutil.rmtree(dest_dir)
     os.makedirs(dest_dir, exist_ok=True)
-    
     item_photos = []
     for idx, (orig_file, title) in enumerate(item["allowed_files"], 1):
-        src_file = os.path.join(src_dir, orig_file)
-        if os.path.exists(src_file):
-            clean_name = f"foto_{idx:02d}.jpg"
-            dest_file = os.path.join(dest_dir, clean_name)
-            shutil.copy2(src_file, dest_file)
-            item_photos.append({
-                "rel_path": f"img/{item['dest_folder']}/{clean_name}",
-                "title": title,
-                "clean_name": clean_name
-            })
-        else:
-            print(f"WARNING: File not found: {src_file}")
-            
+        clean_name = f"foto_{idx:02d}.jpg"
+        item_photos.append({
+            "rel_path": f"img/{item['dest_folder']}/{clean_name}",
+            "title": title,
+            "clean_name": clean_name
+        })
     item["photos"] = item_photos
-    print(f"Curated {len(item_photos)} approved photos for {item['title']}")
 
-# Generate index.html
+# Generate index.html matching EXACTLY valesilvestre.com.br
 html_template = """<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Catálogo Oficial de Acomodações & Lazer — Vale Silvestre Eco Park</title>
-  <meta name="description" content="Conheça os chalés panorâmicos, chalés do lago, gastronomia mineira e opções de lazer do Vale Silvestre Eco Park em Governador Valadares/MG.">
-  <meta name="theme-color" content="#0a0f18">
-  <meta property="og:title" content="Catálogo Oficial de Acomodações — Vale Silvestre Eco Park">
+  <title>Catálogo Oficial de Acomodações & Lazer — Pousada Vale Silvestre Ecopark</title>
+  <meta name="description" content="Conecte-se à Natureza, Viva Experiências Inesquecíveis. Conheça nossos chalés, gastronomia típica e parque ecológico em Governador Valadares/MG.">
+  <meta name="theme-color" content="#395902">
+  <meta property="og:title" content="Catálogo Oficial de Acomodações — Vale Silvestre Ecopark">
   <meta property="og:description" content="Chalés aconchegantes com vista para a lagoa, pensão completa e lazer liberado em Governador Valadares/MG.">
+  <meta property="og:image" content="img/logo_branca.png">
   <meta property="og:type" content="website">
+  
+  <!-- GOOGLE FONTS FROM VALESILVESTRE.COM.BR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --bg: #0a0f18;
-      --card-bg: #121927;
-      --card-border: #1f2a3f;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #10b981;
-      --accent-hover: #059669;
-      --gold: #f59e0b;
-      --gold-light: #fef3c7;
-      --whatsapp: #25d366;
-      --whatsapp-hover: #20ba5a;
-      --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      /* PALETA OFICIAL VALE SILVESTRE */
+      --vs-forest-green: #395902;     /* Verde Principal Elementor Kit */
+      --vs-dark-green: #284001;       /* Verde Escuro / Fundo Banner / Rodapé */
+      --vs-night-green: #0D1A00;      /* Verde Profundo */
+      --vs-gold: #FBB03B;             /* Amarelo Dourado Oficial (Botões/Destaques) */
+      --vs-gold-hover: #E59B24;       /* Dourado Escuro no Hover */
+      --vs-light-green: #85CF04;      /* Verde Folha Vivo no Hover */
+      --vs-beige: #F2EFEB;            /* Areia Suave / Background Secundário */
+      --vs-offwhite: #F5F5F7;         /* Fundo Limpo da Página */
+      --vs-card-bg: #FFFFFF;          /* Fundo dos Cards */
+      --vs-card-border: #E5E9DC;      /* Borda Suave */
+      --vs-text-dark: #22252A;        /* Títulos Escuros */
+      --vs-text-muted: #717580;       /* Texto Descritivo Oficial */
+      --vs-whatsapp: #25D366;
+      
+      /* FONTES OFICIAIS */
+      --font-heading: "Barlow Semi Condensed", sans-serif;
+      --font-body: "Inter", "DM Sans", sans-serif;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
     
     body {
-      font-family: var(--font-main);
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: var(--font-body);
+      background-color: var(--vs-offwhite);
+      color: var(--vs-text-muted);
       line-height: 1.5;
-      padding-bottom: 90px;
+      padding-bottom: 95px;
       overflow-x: hidden;
     }
 
@@ -260,69 +253,89 @@ html_template = """<!DOCTYPE html>
       padding: 0 16px;
     }
 
+    /* HEADER OFICIAL NO PADRÃO VALESILVESTRE.COM.BR */
     .hero-header {
-      background: radial-gradient(circle at top, #162238 0%, #0a0f18 100%);
-      padding: 32px 16px 20px;
+      background: linear-gradient(135deg, #284001 0%, #395902 65%, #466e03 100%);
+      padding: 36px 16px 28px;
       text-align: center;
-      border-bottom: 1px solid var(--card-border);
+      color: #fff;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(40, 64, 1, 0.25);
+    }
+    .header-logo-wrap {
+      margin-bottom: 16px;
+    }
+    .header-logo {
+      max-width: 220px;
+      height: auto;
+      display: inline-block;
     }
     .badge-nature {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      background: rgba(16, 185, 129, 0.12);
-      border: 1px solid rgba(16, 185, 129, 0.3);
-      color: #34d399;
-      font-size: 12px;
+      background: rgba(251, 176, 59, 0.2);
+      border: 1px solid var(--vs-gold);
+      color: #FFF;
+      font-family: var(--font-heading);
+      font-size: 13px;
       font-weight: 600;
-      padding: 5px 12px;
+      padding: 5px 14px;
       border-radius: 20px;
       margin-bottom: 12px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.8px;
     }
     .hero-title {
-      font-size: 26px;
-      font-weight: 800;
-      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 700;
+      color: #FFFFFF;
       letter-spacing: -0.5px;
       margin-bottom: 6px;
+      line-height: 1.15;
+      text-transform: uppercase;
     }
     .hero-subtitle {
-      font-size: 14.5px;
-      color: var(--text-muted);
+      font-size: 15px;
+      color: #F2EFEB;
       max-width: 580px;
-      margin: 0 auto 16px;
-      line-height: 1.45;
+      margin: 0 auto 18px;
+      line-height: 1.5;
     }
     .hero-highlights {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
     .highlight-pill {
-      background: #172033;
-      border: 1px solid var(--card-border);
-      color: #e2e8f0;
-      font-size: 12px;
-      font-weight: 500;
-      padding: 5px 12px;
-      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 6px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
     }
 
+    /* STICKY FILTER BAR */
     .sticky-filter-wrapper {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(10, 15, 24, 0.94);
+      background: rgba(255, 255, 255, 0.96);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--vs-card-border);
       padding: 10px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     }
     .filter-scroll {
       display: flex;
@@ -334,92 +347,102 @@ html_template = """<!DOCTYPE html>
     }
     .filter-scroll::-webkit-scrollbar { display: none; }
     .filter-btn {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      color: var(--text-muted);
-      padding: 8px 16px;
+      background: var(--vs-beige);
+      border: 1px solid #E1DEC8;
+      color: var(--vs-forest-green);
+      padding: 8px 18px;
       border-radius: 24px;
-      font-size: 13.5px;
+      font-family: var(--font-heading);
+      font-size: 14px;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       white-space: nowrap;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.25s ease;
     }
     .filter-btn:hover, .filter-btn.active {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+      background: var(--vs-forest-green);
+      color: #FFFFFF;
+      border-color: var(--vs-forest-green);
+      box-shadow: 0 4px 12px rgba(57, 89, 2, 0.25);
     }
 
+    /* CATALOG FEED */
     .catalog-feed {
-      margin-top: 20px;
+      margin-top: 24px;
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 28px;
     }
 
     .room-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
+      background: var(--vs-card-bg);
+      border: 1px solid var(--vs-card-border);
+      border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-      transition: transform 0.2s;
+      box-shadow: 0 10px 30px rgba(57, 89, 2, 0.08);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .room-card:hover {
+      box-shadow: 0 14px 38px rgba(57, 89, 2, 0.14);
     }
 
+    /* CAROUSEL / MAIN IMAGE */
     .card-gallery-wrap {
       position: relative;
-      background: #000;
+      background: #111;
     }
     .main-photo-link {
       display: block;
       position: relative;
       width: 100%;
-      height: 250px;
+      height: 260px;
       overflow: hidden;
       cursor: pointer;
     }
     @media (min-width: 600px) {
-      .main-photo-link { height: 340px; }
+      .main-photo-link { height: 360px; }
     }
     .main-photo-link img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
     }
     .room-card:hover .main-photo-link img {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
     .top-badge {
       position: absolute;
-      top: 12px;
-      left: 12px;
-      background: rgba(10, 15, 24, 0.85);
-      backdrop-filter: blur(8px);
-      color: var(--gold);
-      border: 1px solid rgba(245, 158, 11, 0.4);
-      font-size: 11px;
+      top: 14px;
+      left: 14px;
+      background: var(--vs-forest-green);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 12px;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 8px;
+      padding: 5px 12px;
+      border-radius: 4px;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.6px;
       z-index: 2;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     .photo-count-btn {
       position: absolute;
-      bottom: 12px;
-      right: 12px;
-      background: rgba(10, 15, 24, 0.85);
+      bottom: 14px;
+      right: 14px;
+      background: rgba(40, 64, 1, 0.85);
       backdrop-filter: blur(8px);
       color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-size: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-family: var(--font-heading);
+      font-size: 13px;
       font-weight: 600;
-      padding: 6px 12px;
+      text-transform: uppercase;
+      padding: 7px 14px;
       border-radius: 20px;
       display: flex;
       align-items: center;
@@ -428,28 +451,30 @@ html_template = """<!DOCTYPE html>
       cursor: pointer;
     }
 
+    /* THUMBNAILS ROW */
     .thumbs-row {
       display: flex;
-      gap: 6px;
-      padding: 10px 12px;
+      gap: 8px;
+      padding: 12px 16px;
       overflow-x: auto;
-      background: #0d131f;
+      background: #F8FAF5;
+      border-bottom: 1px solid var(--vs-card-border);
       scrollbar-width: none;
     }
     .thumbs-row::-webkit-scrollbar { display: none; }
     .thumb-item {
-      width: 62px;
-      height: 52px;
-      border-radius: 8px;
+      width: 68px;
+      height: 54px;
+      border-radius: 6px;
       overflow: hidden;
       flex-shrink: 0;
       cursor: pointer;
-      border: 1.5px solid transparent;
+      border: 2px solid transparent;
       transition: all 0.2s;
     }
     .thumb-item:hover, .thumb-item.active {
-      border-color: var(--accent);
-      transform: scale(1.05);
+      border-color: var(--vs-forest-green);
+      transform: scale(1.06);
     }
     .thumb-item img {
       width: 100%;
@@ -458,134 +483,157 @@ html_template = """<!DOCTYPE html>
       display: block;
     }
 
+    /* CARD BODY */
     .card-body {
-      padding: 20px;
+      padding: 24px;
     }
     .card-header-info {
       display: flex;
       flex-direction: column;
       gap: 6px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .door-sign-tag {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      color: var(--gold);
-      font-size: 12.5px;
+      color: var(--vs-forest-green);
+      font-family: var(--font-heading);
+      font-size: 13px;
       font-weight: 700;
-      background: rgba(245, 158, 11, 0.1);
-      padding: 3px 10px;
-      border-radius: 6px;
+      background: var(--vs-beige);
+      padding: 4px 12px;
+      border-radius: 4px;
       align-self: flex-start;
-      border: 1px solid rgba(245, 158, 11, 0.25);
+      border: 1px solid #E1DEC8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
     .room-title {
-      font-size: 20px;
+      font-family: var(--font-heading);
+      font-size: 24px;
       font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
+      color: var(--vs-forest-green);
+      line-height: 1.25;
+      margin-top: 4px;
     }
     .capacity-tag {
-      color: #38bdf8;
-      font-size: 13.5px;
-      font-weight: 600;
+      color: var(--vs-gold);
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 700;
       display: inline-flex;
       align-items: center;
       gap: 6px;
     }
     .room-desc {
-      color: #cbd5e1;
-      font-size: 14px;
-      line-height: 1.55;
-      margin: 10px 0 16px;
+      color: var(--vs-text-muted);
+      font-size: 14.5px;
+      line-height: 1.6;
+      margin: 12px 0 18px;
     }
 
+    /* FEATURES GRID */
     .features-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 7px;
-      margin-bottom: 18px;
+      gap: 8px;
+      margin-bottom: 22px;
     }
     .feature-chip {
-      background: #182235;
-      border: 1px solid var(--card-border);
-      color: #94a3b8;
-      font-size: 12px;
-      padding: 4px 10px;
-      border-radius: 6px;
+      background: var(--vs-offwhite);
+      border: 1px solid var(--vs-card-border);
+      color: #4A4E57;
+      font-family: var(--font-heading);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 4px;
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 6px;
     }
 
+    /* CARD ACTION BUTTON (EXACT ELEMENTOR BUTTON STYLE) */
     .btn-reserve-card {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
+      gap: 10px;
       width: 100%;
-      background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-      color: #fff;
-      font-size: 14.5px;
-      font-weight: 700;
-      padding: 13px;
-      border-radius: 12px;
+      background-color: var(--vs-gold);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 17px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 14px 20px;
+      border-radius: 4px;
       text-decoration: none;
-      box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
-      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(251, 176, 59, 0.4);
+      transition: all 0.25s ease;
     }
     .btn-reserve-card:hover {
-      background: #059669;
+      background-color: var(--vs-light-green);
+      color: #FFFFFF;
       transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
+      box-shadow: 0 6px 18px rgba(133, 207, 4, 0.45);
     }
 
+    /* FIXED BOTTOM CONVERSION BAR */
     .fixed-bottom-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       width: 100%;
-      background: rgba(10, 15, 24, 0.96);
+      background: rgba(40, 64, 1, 0.97);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
-      border-top: 1px solid var(--card-border);
+      border-top: 2px solid var(--vs-gold);
       padding: 12px 16px;
       z-index: 990;
       display: flex;
       justify-content: center;
-      box-shadow: 0 -8px 25px rgba(0,0,0,0.6);
+      box-shadow: 0 -8px 25px rgba(0,0,0,0.25);
     }
     .btn-whatsapp-fixed {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: var(--whatsapp);
-      color: #fff;
-      font-size: 15px;
+      background: var(--vs-gold);
+      color: #FFFFFF;
+      font-family: var(--font-heading);
+      font-size: 16px;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
       padding: 14px 24px;
-      border-radius: 30px;
+      border-radius: 4px;
       text-decoration: none;
       width: 100%;
       max-width: 500px;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+      box-shadow: 0 4px 16px rgba(251, 176, 59, 0.4);
       animation: pulse 2.5s infinite;
     }
+    .btn-whatsapp-fixed:hover {
+      background: var(--vs-light-green);
+    }
     @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
-      70% { box-shadow: 0 0 0 12px rgba(37, 211, 102, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+      0% { box-shadow: 0 0 0 0 rgba(251, 176, 59, 0.6); }
+      70% { box-shadow: 0 0 0 12px rgba(251, 176, 59, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(251, 176, 59, 0); }
     }
 
+    /* LIGHTBOX MODAL */
     .lightbox-modal {
       display: none;
       position: fixed;
       top: 0; left: 0; width: 100vw; height: 100vh;
-      background: rgba(5, 8, 14, 0.97);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      background: rgba(13, 26, 0, 0.96);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 9999;
       flex-direction: column;
       justify-content: space-between;
@@ -600,17 +648,19 @@ html_template = """<!DOCTYPE html>
       padding: 8px 4px;
     }
     .lightbox-counter {
-      color: var(--text-muted);
-      font-size: 13.5px;
+      color: #F2EFEB;
+      font-family: var(--font-heading);
+      font-size: 15px;
       font-weight: 600;
+      text-transform: uppercase;
     }
     .lightbox-close-btn {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       border: none;
       color: #fff;
-      font-size: 24px;
-      width: 40px;
-      height: 40px;
+      font-size: 26px;
+      width: 42px;
+      height: 42px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
@@ -629,20 +679,20 @@ html_template = """<!DOCTYPE html>
       max-width: 100%;
       max-height: 72vh;
       object-fit: contain;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: 0 15px 35px rgba(0,0,0,0.8);
-      transition: transform 0.2s;
+      border: 1px solid rgba(255, 255, 255, 0.15);
     }
     .lb-nav {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(18, 25, 39, 0.7);
-      border: 1px solid rgba(255,255,255,0.2);
+      background: rgba(40, 64, 1, 0.8);
+      border: 1px solid rgba(251, 176, 59, 0.4);
       color: #fff;
-      font-size: 22px;
-      width: 44px;
-      height: 44px;
+      font-size: 24px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       cursor: pointer;
       display: flex;
@@ -657,42 +707,54 @@ html_template = """<!DOCTYPE html>
       text-align: center;
     }
     .lightbox-title {
-      font-size: 14.5px;
-      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 16px;
+      color: #FFFFFF;
       font-weight: 600;
       margin-bottom: 2px;
     }
     .lightbox-subtitle {
-      font-size: 12px;
-      color: var(--text-muted);
+      font-size: 13px;
+      color: #F2EFEB;
     }
 
+    /* FOOTER OFICIAL VALE SILVESTRE */
     .site-footer {
+      background: #284001;
+      color: #F2EFEB;
       text-align: center;
-      padding: 36px 16px 20px;
-      color: var(--text-muted);
-      font-size: 13px;
-      border-top: 1px solid var(--card-border);
-      margin-top: 40px;
+      padding: 42px 16px 28px;
+      font-size: 14px;
+      margin-top: 48px;
+      border-top: 3px solid var(--vs-gold);
     }
-    .site-footer a { color: var(--accent); text-decoration: none; }
+    .footer-logo {
+      max-width: 180px;
+      margin-bottom: 16px;
+    }
+    .site-footer a { color: var(--vs-gold); text-decoration: none; font-weight: 600; }
   </style>
 </head>
 <body>
 
+  <!-- HERO HEADER COM LOGO OFICIAL -->
   <header class="hero-header">
-    <div class="badge-nature">🌿 Refúgio Ecológico & Lazer</div>
-    <h1 class="hero-title">Vale Silvestre Eco Park</h1>
-    <p class="hero-subtitle">Conheça nossos chalés aconchegantes com vista privilegiada para o lago, cercados de natureza exuberante e tranquilidade.</p>
+    <div class="header-logo-wrap">
+      <img src="img/logo_branca.png" alt="Vale Silvestre Ecopark" class="header-logo">
+    </div>
+    <div class="badge-nature">🌿 Conecte-se à Natureza • Ecopark & Pousada</div>
+    <h1 class="hero-title">Catálogo Oficial de Acomodações</h1>
+    <p class="hero-subtitle">Conheça nossos chalés aconchegantes com vista privilegiada para o lago, cercados de natureza exuberante, pensão completa e lazer liberado.</p>
     
     <div class="hero-highlights">
       <span class="highlight-pill">🍽️ Pensão Completa Inclusa</span>
-      <span class="highlight-pill">🏊 Parque Aquático & Piscinas</span>
+      <span class="highlight-pill">🏊 Piscinas & Toboágua</span>
       <span class="highlight-pill">🚣 Caiaques & Pedalinhos</span>
       <span class="highlight-pill">🐾 Espaço Pet Friendly</span>
     </div>
   </header>
 
+  <!-- STICKY FILTER BAR -->
   <div class="sticky-filter-wrapper">
     <div class="container">
       <div class="filter-scroll">
@@ -706,6 +768,7 @@ html_template = """<!DOCTYPE html>
     </div>
   </div>
 
+  <!-- CATALOG FEED -->
   <main class="container">
     <div class="catalog-feed" id="catalogFeed">
 """
@@ -715,7 +778,7 @@ for item in items:
     features_html = "".join([f'<span class="feature-chip">✓ {html.escape(f)}</span>' for f in item["features"]])
     first_photo = item["photos"][0]["rel_path"] if item["photos"] else ""
     
-    msg_encoded = urllib.parse.quote(f"Olá! Estou vendo o catálogo do Vale Silvestre e gostaria de saber a disponibilidade do *{item['title']}*!")
+    msg_encoded = urllib.parse.quote(f"Olá! Estou vendo o catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade do *{item['title']}*!")
     wa_url = f"https://wa.me/553399989100?text={msg_encoded}"
     
     thumbs_html = ""
@@ -734,7 +797,7 @@ for item in items:
             <img id="main-img-{item['id']}" src="{first_photo}" alt="{html.escape(item['title'])}">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('{item['id']}', 0)">
-            📸 Ver todas as {len(item['photos'])} fotos
+            📸 Ver {len(item['photos'])} fotos
           </button>
         </div>
 
@@ -766,15 +829,17 @@ html_template += """
     </div>
   </main>
 
+  <!-- FIXED BOTTOM WHATSAPP BAR -->
   <div class="fixed-bottom-bar">
-    <a href="https://wa.me/553399989100?text=Ol%C3%A1%21+Estou+vendo+o+cat%C3%A1logo+de+fotos+da+pousada+e+gostaria+de+fazer+uma+reserva%21" target="_blank" class="btn-whatsapp-fixed">
+    <a href="https://wa.me/553399989100?text=Ol%C3%A1%21+Estou+vendo+o+cat%C3%A1logo+oficial+da+pousada+e+gostaria+de+consultar+valores+e+disponibilidade%21" target="_blank" class="btn-whatsapp-fixed">
       💬 Falar com a Central de Reservas
     </a>
   </div>
 
+  <!-- LIGHTBOX MODAL -->
   <div id="lightbox" class="lightbox-modal">
     <div class="lightbox-top">
-      <span id="lbCounter" class="lightbox-counter">1 / 8</span>
+      <span id="lbCounter" class="lightbox-counter">1 / 6</span>
       <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
     </div>
     <div class="lightbox-center">
@@ -784,14 +849,17 @@ html_template += """
     </div>
     <div class="lightbox-bottom">
       <div id="lbTitle" class="lightbox-title">Título da Foto</div>
-      <div id="lbSubtitle" class="lightbox-subtitle">Vale Silvestre Eco Park</div>
+      <div id="lbSubtitle" class="lightbox-subtitle">Pousada Vale Silvestre Ecopark</div>
     </div>
   </div>
 
+  <!-- FOOTER NO PADRÃO OFICIAL -->
   <footer class="site-footer">
-    <p><strong>Vale Silvestre Eco Park</strong> — Governador Valadares, MG</p>
-    <p>Central de Reservas WhatsApp: <a href="https://wa.me/553399989100">(33) 99989-9100</a></p>
-    <p style="margin-top:6px; font-size:12px;">Pensão Completa • Piscinas • Lago com Caiaques • Trilhas</p>
+    <img src="img/logo_branca.png" alt="Vale Silvestre Ecopark" class="footer-logo">
+    <p><strong>Pousada Vale Silvestre Ecopark</strong> — Governador Valadares/MG</p>
+    <p style="margin: 8px 0;">Central de Reservas WhatsApp: <a href="https://wa.me/553399989100">(33) 99989-9100</a></p>
+    <p style="font-size: 13px; color: #DCDDE8;">Pensão Completa • Parque Aquático • Lago com Caiaques • Trilhas</p>
+    <p style="margin-top: 14px; font-size: 12px; color: #ABB8C3;">© Vale Silvestre Eco Park. Todos os direitos reservados.</p>
   </footer>
 
   <script>
@@ -805,6 +873,14 @@ html_template += """
       const imgEl = document.getElementById('main-img-' + cardId);
       if (imgEl) {
         imgEl.src = photos[photoIdx].rel_path;
+      }
+      // highlight active thumbnail
+      const card = document.getElementById('card-' + cardId);
+      if (card) {
+        card.querySelectorAll('.thumb-item').forEach((t, i) => {
+          if (i === photoIdx) t.classList.add('active');
+          else t.classList.remove('active');
+        });
       }
     }
 
@@ -889,4 +965,4 @@ html_template += """
 with open(os.path.join(site_dir, "index.html"), "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print("SUCCESS! Generated mobile-friendly client website in index.html with Viviane's standards!")
+print("SUCCESS! Generated mobile-friendly client website in index.html matching valesilvestre.com.br!")
