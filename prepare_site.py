@@ -8,7 +8,8 @@ src_base = r"G:\Meu Drive\01 - Profissional e Negócios\Vale Silvestre\Fotos_Sel
 site_dir = r"C:\Users\danie\vale-silvestre-catalogo"
 img_dest_root = os.path.join(site_dir, "img")
 
-# Accommodation Catalog Definition - Curated strictly after Viviane's inspection
+# Accommodation & Experience Catalog Definition
+# Tailored to be 100% contextual (no door signs or "chalé" buttons on Leisure/Food!)
 items = [
     {
         "id": "panoramico-02",
@@ -16,8 +17,10 @@ items = [
         "category_label": "Chalé Panorâmico",
         "badge": "Mais Procurado • Vista Panorâmica 360°",
         "title": "Chalé Panorâmico — Piso 02 Superior",
-        "door_sign": "Arara",
-        "capacity": "Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
+        "tag_label": "🏷️ Placa na Porta: Arara",
+        "capacity_label": "👥 Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
+        "btn_text": "💬 Consultar Disponibilidade deste Chalé",
+        "wa_msg": "Olá! Estou vendo o catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade do *Chalé Panorâmico — Piso 02 Superior*!",
         "desc": "Localizado no ponto mais nobre da colina com rampa suave de madeira. Possui pé-direito alto, ambiente super arejado e uma varanda panorâmica de madeira privativa com a vista mais deslumbrante de todo o lago e das montanhas. Uma experiência romântica e inesquecível!",
         "features": ["Varanda Panorâmica 360°", "Vista Privilegiada da Lagoa", "Cama Box de Casal", "2 Camas de Solteiro", "TV LCD", "Frigobar", "Ventilador de Teto", "Banheiro Privativo"],
         "src_folder": "06_Chale_Panoramico_Piso_02",
@@ -37,8 +40,10 @@ items = [
         "category_label": "Chalé Panorâmico",
         "badge": "Acesso Plano • Varanda com Jardim",
         "title": "Chalé Panorâmico — Piso 01 Térreo",
-        "door_sign": "Orquídea e Paraju",
-        "capacity": "Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
+        "tag_label": "🏷️ Placa na Porta: Orquídea e Paraju",
+        "capacity_label": "👥 Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
+        "btn_text": "💬 Consultar Disponibilidade deste Chalé",
+        "wa_msg": "Olá! Estou vendo o catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade do *Chalé Panorâmico — Piso 01 Térreo*!",
         "desc": "Conforto absoluto com acesso térreo direto, perfeito para quem busca comodidade e acessibilidade sem escadas. Conta com hall de entrada com poema decorativo, varanda ampla com jardim e vista charmosa.",
         "features": ["Acesso Térreo Plano (Sem Escadas)", "Varanda com Jardim", "Hall com Poema Rústico", "Cama Box de Casal", "2 Camas de Solteiro", "TV LCD", "Frigobar", "Banheiro Privativo"],
         "src_folder": "05_Chale_Panoramico_Piso_01",
@@ -58,8 +63,10 @@ items = [
         "category_label": "Chalés do Lago",
         "badge": "Em Frente ao Lago • Quarto e Sala",
         "title": "Chalé do Lago — 01 Quarto e Sala",
-        "door_sign": "Bouganville",
-        "capacity": "Até 5 pessoas (Quarto com cama de casal + solteiro | Sala com 2 sofás-cama)",
+        "tag_label": "🏷️ Placa na Porta: Bouganville",
+        "capacity_label": "👥 Até 5 pessoas (Quarto com cama de casal + solteiro | Sala com 2 sofás-cama)",
+        "btn_text": "💬 Consultar Disponibilidade deste Chalé",
+        "wa_msg": "Olá! Estou vendo o catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade do *Chalé do Lago — 01 Quarto e Sala*!",
         "desc": "Localização paradisíaca às margens da lagoa e coladinho ao restaurante principal. A divisão entre quarto privativo e sala de estar ampla oferece total privacidade aos pais enquanto as crianças dormem confortavelmente na sala. Varanda charmosa de frente para a água!",
         "features": ["Em Frente à Lagoa", "Ao Lado do Restaurante", "Quarto Privativo", "Sala de Estar com Sofás-Cama", "Geladeira", "Bancada Americana", "Varanda com Vista da Água"],
         "src_folder": "03_Chale_do_Lago_Quarto_e_Sala",
@@ -78,8 +85,10 @@ items = [
         "category_label": "Chalés do Lago",
         "badge": "Espaço Família • 2 Quartos Privativos",
         "title": "Chalé do Lago — 02 Quartos e Sala",
-        "door_sign": "Bromélia e Gameleira",
-        "capacity": "Até 7 pessoas (Quarto 1: casal + solteiro | Quarto 2: 3 solteiro | Sala: 2 sofás-cama)",
+        "tag_label": "🏷️ Placa na Porta: Bromélia e Gameleira",
+        "capacity_label": "👥 Até 7 pessoas (Quarto 1: casal + solteiro | Quarto 2: 3 solteiro | Sala: 2 sofás-cama)",
+        "btn_text": "💬 Consultar Disponibilidade deste Chalé",
+        "wa_msg": "Olá! Estou vendo o catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade do *Chalé do Lago — 02 Quartos e Sala*!",
         "desc": "A maior acomodação da pousada, projetada com carinho para famílias grandes ou pequenos grupos. Conta com dois dormitórios independentes, sala espaçosa com sofás-cama, frigobar retrô Coca-Cola e varanda com brisa refrescante do lago.",
         "features": ["2 Quartos Privativos", "Acomoda até 7 Pessoas", "Sala com Sofás-Cama", "Frigobar Retrô Coca-Cola", "Bancada e Pia", "Varanda na Beira do Lago", "Excelente Conforto"],
         "src_folder": "04_Chale_do_Lago_2_Quartos_e_Sala",
@@ -99,8 +108,10 @@ items = [
         "category_label": "Suítes",
         "badge": "Ótimo Custo-Benefício • Localização Central",
         "title": "Suíte Central",
-        "door_sign": "Braúna",
-        "capacity": "Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
+        "tag_label": "🏷️ Placa na Porta: Braúna",
+        "capacity_label": "👥 Casal + 2 camas de solteiro (acomoda até 4 pessoas)",
+        "btn_text": "💬 Consultar Disponibilidade desta Suíte",
+        "wa_msg": "Olá! Estou vendo o catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade da *Suíte Central*!",
         "desc": "Acomodação acolhedora situada próxima à praça central e ao restaurante. Excelente opção de custo-benefício com cama de casal, duas de solteiro, frigobar, TV LCD e varanda térrea com jardim.",
         "features": ["Próxima ao Restaurante", "Cama de Casal + 2 Solteiro", "TV LCD", "Frigobar", "Banheiro com Gabinete de Madeira", "Varanda Térrea"],
         "src_folder": "02_Suite_Central",
@@ -119,8 +130,10 @@ items = [
         "category_label": "Suítes",
         "badge": "Grande Porte • Até 7 Pessoas",
         "title": "Suíte Mangueira",
-        "door_sign": "Paca e Jaguatirica",
-        "capacity": "Casal + 2 beliches de madeira + 1 solteiro (acomoda até 7 pessoas)",
+        "tag_label": "🏷️ Placa na Porta: Paca e Jaguatirica",
+        "capacity_label": "👥 Casal + 2 beliches de madeira + 1 solteiro (acomoda até 7 pessoas)",
+        "btn_text": "💬 Consultar Disponibilidade desta Suíte",
+        "wa_msg": "Olá! Estou vendo o catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade da *Suíte Mangueira*!",
         "desc": "Suíte espaçosa em meio a uma área verde tranquila e sombreada por mangueiras nativas. Muito confortável para famílias que desejam ficar juntas no mesmo ambiente.",
         "features": ["Espaço para até 7 Pessoas", "1 Cama Casal + 2 Beliches", "Banheiro Privativo", "Área Verde Tranquila", "Ideal para Grupos e Famílias"],
         "src_folder": "01_Suite_Mangueira",
@@ -139,8 +152,10 @@ items = [
         "category_label": "Lazer & Natureza",
         "badge": "Incluso em Todas as Diárias",
         "title": "Lazer Completo, Lagoa & Atrações",
-        "door_sign": "Parque Ecológico",
-        "capacity": "Lazer liberado para todos os hóspedes",
+        "tag_label": "🌳 Estrutura & Atrações ao Ar Livre",
+        "capacity_label": "✨ 100% Liberado e Incluso em Todas as Hospedagens",
+        "btn_text": "💬 Consultar Pacotes com Lazer Liberado",
+        "wa_msg": "Olá! Vi as opções de lazer e atrações no catálogo e gostaria de consultar os pacotes de hospedagem do Vale Silvestre!",
         "desc": "Viva momentos mágicos ao ar livre! O parque oferece passeios livres de caiaque e pedalinhos (cisne e dragão), ponte pênsil suspensa, deck com iluminação noturna, píer com moldura de coração para fotos, balanço na árvore gigante, pesca esportiva e trilhas ecológicas.",
         "features": ["Passeio de Caiaque", "Pedalinho Cisne & Dragão", "Deck Panorâmico Iluminado", "Ponte Pênsil Suspensa", "Píer Moldura Coração", "Balanço na Árvore Gigante", "Pesca Esportiva", "Trilhas Ecológicas"],
         "src_folder": "08_Lazer_Lagoa_Deck_e_Natureza",
@@ -162,8 +177,10 @@ items = [
         "category_label": "Gastronomia Mineira",
         "badge": "Pensão Completa Inclusa",
         "title": "Gastronomia Mineira & Restaurante",
-        "door_sign": "Restaurante do Vale",
-        "capacity": "Jantar, Café da Manhã e Almoço Mineiro",
+        "tag_label": "🍽️ Culinária Típica Mineira em Panelas de Barro",
+        "capacity_label": "🍲 Jantar, Café da Manhã e Almoço com Sobremesas Inclusos",
+        "btn_text": "💬 Consultar Pacotes com Pensão Completa",
+        "wa_msg": "Olá! Vi as fotos da gastronomia no catálogo e gostaria de consultar os pacotes com pensão completa inclusa!",
         "desc": "A autêntica tradição mineira servida com fartura e carinho! Desfrute de buffet completo com pratos tradicionais servidos em panelas de barro, sobremesas caseiras deliciosas, farto café da manhã com bolos artesanais e quitandas, além de música ao vivo no almoço aos fins de semana.",
         "features": ["Pensão Completa Inclusa", "Panelas de Barro Tradicionais", "Sobremesas Típicas", "Café da Manhã Farto", "Bolos e Quitandas Caseiras", "Música ao Vivo aos Fins de Semana", "Salão e Varanda com Vista"],
         "src_folder": "09_Gastronomia_Restaurante_Buffet",
@@ -554,7 +571,7 @@ html_template = """<!DOCTYPE html>
       gap: 6px;
     }
 
-    /* CARD ACTION BUTTON (EXACT ELEMENTOR BUTTON STYLE) */
+    /* CARD ACTION BUTTON */
     .btn-reserve-card {
       display: flex;
       align-items: center;
@@ -778,7 +795,7 @@ for item in items:
     features_html = "".join([f'<span class="feature-chip">✓ {html.escape(f)}</span>' for f in item["features"]])
     first_photo = item["photos"][0]["rel_path"] if item["photos"] else ""
     
-    msg_encoded = urllib.parse.quote(f"Olá! Estou vendo o catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade do *{item['title']}*!")
+    msg_encoded = urllib.parse.quote(item["wa_msg"])
     wa_url = f"https://wa.me/553399989100?text={msg_encoded}"
     
     thumbs_html = ""
@@ -807,9 +824,9 @@ for item in items:
 
         <div class="card-body">
           <div class="card-header-info">
-            <span class="door-sign-tag">🏷️ Placa na Porta: {html.escape(item['door_sign'])}</span>
+            <span class="door-sign-tag">{item['tag_label']}</span>
             <h2 class="room-title">{html.escape(item['title'])}</h2>
-            <span class="capacity-tag">👥 {html.escape(item['capacity'])}</span>
+            <span class="capacity-tag">{item['capacity_label']}</span>
           </div>
 
           <p class="room-desc">{html.escape(item['desc'])}</p>
@@ -819,7 +836,7 @@ for item in items:
           </div>
 
           <a href="{wa_url}" target="_blank" class="btn-reserve-card">
-            💬 Consultar Disponibilidade deste Chalé
+            {item['btn_text']}
           </a>
         </div>
       </article>
@@ -874,7 +891,6 @@ html_template += """
       if (imgEl) {
         imgEl.src = photos[photoIdx].rel_path;
       }
-      // highlight active thumbnail
       const card = document.getElementById('card-' + cardId);
       if (card) {
         card.querySelectorAll('.thumb-item').forEach((t, i) => {
@@ -965,4 +981,4 @@ html_template += """
 with open(os.path.join(site_dir, "index.html"), "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print("SUCCESS! Generated mobile-friendly client website in index.html matching valesilvestre.com.br!")
+print("SUCCESS! Updated prepare_site.py and index.html with customized buttons and tags!")
