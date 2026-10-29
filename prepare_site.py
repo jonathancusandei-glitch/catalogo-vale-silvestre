@@ -96,7 +96,7 @@ items = [
     {
         "id": "suite-central",
         "category": "suites",
-        "category_label": "Suítes Coloniais",
+        "category_label": "Suítes",
         "badge": "Ótimo Custo-Benefício • Localização Central",
         "title": "Suíte Central",
         "door_sign": "Braúna",
@@ -116,7 +116,7 @@ items = [
     {
         "id": "suite-mangueira",
         "category": "suites",
-        "category_label": "Suítes Coloniais",
+        "category_label": "Suítes",
         "badge": "Grande Porte • Até 7 Pessoas",
         "title": "Suíte Mangueira",
         "door_sign": "Paca e Jaguatirica",
@@ -748,7 +748,7 @@ html_template = """<!DOCTYPE html>
     
     <div class="hero-highlights">
       <span class="highlight-pill">🍽️ Pensão Completa Inclusa</span>
-      <span class="highlight-pill">🏊 Piscinas & Toboágua</span>
+      <span class="highlight-pill">🏊 Piscinas Adulto & Infantil</span>
       <span class="highlight-pill">🚣 Caiaques & Pedalinhos</span>
       <span class="highlight-pill">🐾 Espaço Pet Friendly</span>
     </div>
@@ -761,7 +761,7 @@ html_template = """<!DOCTYPE html>
         <button class="filter-btn active" onclick="filterCategory('all', this)">🌟 Todos</button>
         <button class="filter-btn" onclick="filterCategory('panoramicos', this)">🌅 Chalés Panorâmicos</button>
         <button class="filter-btn" onclick="filterCategory('lago', this)">🏡 Chalés do Lago</button>
-        <button class="filter-btn" onclick="filterCategory('suites', this)">🌿 Suítes Coloniais</button>
+        <button class="filter-btn" onclick="filterCategory('suites', this)">🌿 Suítes</button>
         <button class="filter-btn" onclick="filterCategory('lazer', this)">🚣 Lazer & Atrações</button>
         <button class="filter-btn" onclick="filterCategory('gastronomia', this)">🍽️ Gastronomia</button>
       </div>
