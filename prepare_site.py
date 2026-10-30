@@ -151,13 +151,13 @@ items = [
         "category": "lazer",
         "category_label": "Lazer & Natureza",
         "badge": "Incluso em Todas as Diárias",
-        "title": "Lazer Completo, Lagoa & Atrações",
+        "title": "Lazer Completo, Lagoa & Atrações ao Ar Livre",
         "tag_label": "🌳 Estrutura & Atrações ao Ar Livre",
         "capacity_label": "✨ 100% Liberado e Incluso em Todas as Hospedagens",
         "btn_text": "💬 Consultar Pacotes com Lazer Liberado",
         "wa_msg": "Olá! Vi as opções de lazer e atrações no catálogo e gostaria de consultar os pacotes de hospedagem do Vale Silvestre!",
-        "desc": "Viva momentos mágicos ao ar livre! O parque oferece passeios livres de caiaque e pedalinhos (cisne e dragão), ponte pênsil suspensa, deck com iluminação noturna, píer com moldura de coração para fotos, balanço na árvore gigante, pesca esportiva e trilhas ecológicas.",
-        "features": ["Passeio de Caiaque", "Pedalinho Cisne & Dragão", "Deck Panorâmico Iluminado", "Ponte Pênsil Suspensa", "Píer Moldura Coração", "Balanço na Árvore Gigante", "Pesca Esportiva", "Trilhas Ecológicas"],
+        "desc": "Viva momentos mágicos ao ar livre! O parque ecológico oferece passeios de caiaque e pedalinhos temáticos (cisne e dragão com coletes de segurança), ponte pênsil suspensa, deck com iluminação noturna, píer com moldura de coração para fotos, balanço na árvore gigante, área de brinquedos com balanço de pneu, pesca esportiva e trilhas na natureza.",
+        "features": ["Passeio de Caiaque", "Pedalinho Cisne & Dragão", "Balanço na Árvore Gigante", "Área de Brinquedos ao Ar Livre", "Deck Panorâmico Iluminado", "Ponte Pênsil Suspensa", "Píer Moldura Coração", "Pesca Esportiva", "Trilhas Ecológicas"],
         "src_folder": "08_Lazer_Lagoa_Deck_e_Natureza",
         "dest_folder": "lazer-natureza",
         "allowed_files": [
@@ -168,7 +168,42 @@ items = [
             ("05_Ponte_Pensil_Suspensa_sobre_o_Lago.jpg", "Ponte Pênsil Suspensa"),
             ("06_Pier_com_Moldura_de_Coracao_Fotos.jpg", "Píer Moldura Coração para Fotos"),
             ("07_Arvore_Gigante_com_Balanco_e_Pergolados.jpg", "Balanço na Árvore Gigante"),
-            ("08_Portaria_e_Entrada_Vale_Silvestre_Eco_Park.jpg", "Portaria do Parque Ecológico")
+            ("08_Portaria_e_Entrada_Vale_Silvestre_Eco_Park.jpg", "Portaria do Parque Ecológico"),
+            ("foto_09.jpg", "Área de Brinquedos ao Ar Livre e Balanço sob as Árvores")
+        ]
+    },
+    {
+        "id": "espaco-kids-coberto",
+        "category": "lazer kids",
+        "category_label": "Espaço Kids & Lazer Coberto",
+        "badge": "☔ 100% Protegido da Chuva • Espaço Kids & Família",
+        "title": "Espaço Kids Coberto, Recreação Infantil & Jogos",
+        "tag_label": "🎨 Oficinas com Monitora & Estrutura 100% Coberta",
+        "capacity_label": "👶 Espaço Aconchegante e Protegido para Todas as Idades",
+        "btn_text": "💬 Consultar Lazer Infantil e Pacotes de Família",
+        "wa_msg": "Olá! Vi o Espaço Kids e as opções de lazer coberto no catálogo e gostaria de tirar dúvidas sobre as atrações para crianças e a programação em dias de chuva!",
+        "desc": "Seus filhos felizes e protegidos faça sol ou faça chuva! O Vale Silvestre conta com ampla infraestrutura coberta e arejada para as crianças brincarem à vontade com segurança e conforto: oficinas de arte e pintura com monitora infantil, confecção de biscoitos decorados, espaço para desenhos e atividades lúdicas, além de salão de jogos com pingue-pongue, totó e sinuca. Mesmo em períodos chuvosos, toda a família aproveita momentos mágicos sem se preocupar com o tempo!",
+        "features": [
+            "100% Estrutura Coberta contra Chuva",
+            "Oficinas Criativas com Monitora Infantil",
+            "Pintura Artística e Artesanato Infantil",
+            "Oficina Doce de Confeitar Biscoitos",
+            "Salão de Jogos Coberto",
+            "Pingue-Pongue, Totó e Sinuca",
+            "Salão Panorâmico Envidraçado",
+            "Pedalinhos com Coletes Salva-Vidas",
+            "Área de Brinquedos e Balanços sob as Árvores"
+        ],
+        "src_folder": "espaco-kids-coberto",
+        "dest_folder": "espaco-kids-coberto",
+        "allowed_files": [
+            ("foto_01.jpg", "Salão Coberto de Recreação Infantil com Monitora"),
+            ("foto_02.jpg", "Crianças em Oficina Criativa de Pintura na Área Coberta"),
+            ("foto_03.jpg", "Monitora Infantil Apoiando os Pequenos nas Atividades"),
+            ("foto_04.jpg", "Oficina Doce de Confeitar Biscoitos Artísticos"),
+            ("foto_05.jpg", "Momento Doce e Divertido das Crianças no Espaço Coberto"),
+            ("foto_06.jpg", "Amplo Salão Panorâmico Coberto e Envidraçado"),
+            ("foto_07.jpg", "Área de Brinquedos ao Ar Livre e Balanço de Pneu")
         ]
     },
     {
@@ -767,6 +802,8 @@ html_template = """<!DOCTYPE html>
       <span class="highlight-pill">🍽️ Pensão Completa Inclusa</span>
       <span class="highlight-pill">🏊 Piscinas Adulto & Infantil</span>
       <span class="highlight-pill">🚣 Caiaques & Pedalinhos</span>
+      <span class="highlight-pill">🎨 Espaço Kids & Recreação</span>
+      <span class="highlight-pill">☔ Estrutura 100% Coberta contra Chuva</span>
       <span class="highlight-pill">🐾 Espaço Pet Friendly</span>
     </div>
   </header>
@@ -780,6 +817,7 @@ html_template = """<!DOCTYPE html>
         <button class="filter-btn" onclick="filterCategory('lago', this)">🏡 Chalés do Lago</button>
         <button class="filter-btn" onclick="filterCategory('suites', this)">🌿 Suítes</button>
         <button class="filter-btn" onclick="filterCategory('lazer', this)">🚣 Lazer & Atrações</button>
+        <button class="filter-btn" onclick="filterCategory('kids', this)">🎈 Espaço Kids Coberto</button>
         <button class="filter-btn" onclick="filterCategory('gastronomia', this)">🍽️ Gastronomia</button>
       </div>
     </div>
@@ -966,7 +1004,8 @@ html_template += """
       btn.classList.add('active');
 
       document.querySelectorAll('.room-card').forEach(card => {
-        if (cat === 'all' || card.dataset.category === cat) {
+        const cardCats = (card.dataset.category || '').split(' ');
+        if (cat === 'all' || cardCats.includes(cat)) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';
