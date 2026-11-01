@@ -147,6 +147,36 @@ items = [
         ]
     },
     {
+        "id": "piscinas",
+        "category": "lazer piscinas",
+        "category_label": "Piscinas & Lazer",
+        "badge": "☀️ Piscinas Adulto & Infantil • Lazer Refrescante",
+        "title": "Piscinas Adulto & Infantil e Área de Banho de Sol",
+        "tag_label": "🏊 Piscinas ao Ar Livre com Deck e Quiosques",
+        "capacity_label": "✨ 100% Liberado e Incluso em Todas as Hospedagens e Day Use",
+        "btn_text": "💬 Consultar Pacotes com Piscinas Inclusas",
+        "wa_msg": "Olá! Vi as fotos das piscinas no catálogo oficial do Vale Silvestre e gostaria de consultar a disponibilidade e pacotes de hospedagem!",
+        "desc": "Refresque-se e relaxe em meio à natureza aos pés do Pico do Ibituruna! O Vale Silvestre conta com área completa de piscinas ao ar livre com água cristalina: piscina principal para adultos e piscinas infantis rasas dedicadas para os pequenos se divertirem em total segurança. O espaço conta com deck para banho de sol, duchas ecológicas, quiosque rústico de palha e pavilhão coberto para sombra e descanso de toda a família.",
+        "features": [
+            "Piscina Adulto com Água Cristalina",
+            "Piscinas Infantis Dedicadas (Rasas & Seguras)",
+            "Deck Amplo para Banho de Sol",
+            "Duchas ao Ar Livre",
+            "Quiosque Rústico Sombreado",
+            "Pavilhão Coberto com Mesas",
+            "Cercado por Montanhas e Natureza",
+            "Incluso nas Diárias e Day Use"
+        ],
+        "src_folder": "08F_Piscinas_Adulto_e_Infantil",
+        "dest_folder": "piscinas",
+        "allowed_files": [
+            ("01_Piscina_Adulto_e_Infantil_Deck_Solar.jpg", "Piscina Adulto e Piscinas Infantis com Deck ao Ar Livre"),
+            ("02_Area_de_Piscinas_e_Mata_Nativa.jpg", "Área de Piscinas com Deck de Banho de Sol e Mata Nativa"),
+            ("03_Vista_Panoramica_Piscinas_e_Lagoa.jpg", "Vista Panorâmica do Complexo de Piscinas Integrado ao Lago"),
+            ("04_Vista_Aerea_Vale_Silvestre_Piscinas.jpg", "Vista Aérea Geral do Vale Silvestre com a Área de Piscinas")
+        ]
+    },
+    {
         "id": "lazer-natureza",
         "category": "lazer",
         "category_label": "Lazer & Natureza",
@@ -816,7 +846,7 @@ html_template = """<!DOCTYPE html>
         <button class="filter-btn" onclick="filterCategory('panoramicos', this)">🌅 Chalés Panorâmicos</button>
         <button class="filter-btn" onclick="filterCategory('lago', this)">🏡 Chalés do Lago</button>
         <button class="filter-btn" onclick="filterCategory('suites', this)">🌿 Suítes</button>
-        <button class="filter-btn" onclick="filterCategory('lazer', this)">🚣 Lazer & Atrações</button>
+        <button class="filter-btn" onclick="filterCategory('lazer', this)">🏊 Piscinas & Lazer</button>
         <button class="filter-btn" onclick="filterCategory('kids', this)">🎈 Espaço Kids Coberto</button>
         <button class="filter-btn" onclick="filterCategory('gastronomia', this)">🍽️ Gastronomia</button>
       </div>
