@@ -9,7 +9,7 @@ site_dir = r"C:\Users\danie\vale-silvestre-catalogo"
 img_dest_root = os.path.join(site_dir, "img")
 
 # Accommodation & Experience Catalog Definition
-# Tailored to be 100% contextual (no door signs or "chalé" buttons on Leisure/Food!)
+# Tailored to be 100% contextual (no door signs or "chalé" buttons on Leisure/Food/Camping!)
 items = [
     {
         "id": "panoramico-02",
@@ -31,7 +31,8 @@ items = [
             ("05_Quarto_Amplo_com_Camas_Solteiro_e_TV.jpg", "Quarto Amplo e Aconchegante"),
             ("06_Bancada_da_Pia_Decorada_com_Flores.jpg", "Bancada da Pia com Flores Naturais"),
             ("07_Varanda_de_Madeira_Mesa_sobre_a_Lagoa.jpg", "Varanda Panorâmica Debruçada na Lagoa"),
-            ("08_Vista_Panoramica_Espetacular_da_Lagoa.jpg", "Vista Espetacular da Lagoa e Natureza")
+            ("08_Vista_Panoramica_Espetacular_da_Lagoa.jpg", "Vista Espetacular da Lagoa e Natureza"),
+            ("foto_07.jpg", "Fachada dos Chalés Panorâmicos no Alto da Colina Verde")
         ]
     },
     {
@@ -54,7 +55,8 @@ items = [
             ("03_Hall_com_Poema_na_Parede_e_Mesa_Rustica.jpg", "Hall com Poema e Decoração Rústica"),
             ("04_Quarto_com_Cama_Casal_e_Solteiro.jpg", "Quarto Confortável Casal e Solteiro"),
             ("05_Quarto_Decoracao_Romantica_com_Petalas.jpg", "Decoração Romântica Especial"),
-            ("06_Bancada_da_Pia_Granito_Preto.jpg", "Bancada da Pia com Cestinha de Amenities")
+            ("06_Bancada_da_Pia_Granito_Preto.jpg", "Bancada da Pia com Cestinha de Amenities"),
+            ("foto_07.jpg", "Vista Externa dos Chalés Panorâmicos com Sol e Natureza")
         ]
     },
     {
@@ -121,7 +123,9 @@ items = [
             ("02_Cama_de_Casal_com_Almofadas_Coracao.jpg", "Cama de Casal com Almofadas de Coração"),
             ("03_Quarto_com_Camas_de_Solteiro_e_TV.jpg", "Quarto Arejado com Camas de Solteiro e TV"),
             ("04_Visao_Ampla_do_Quarto.jpg", "Visão Ampla e Iluminação Natural"),
-            ("05_Banheiro_Gabinete_Madeira.jpg", "Bancada com Gabinete Rústico de Madeira")
+            ("05_Banheiro_Gabinete_Madeira.jpg", "Bancada com Gabinete Rústico de Madeira"),
+            ("foto_06.jpg", "Acesso Ensolarado com Guarda-Corpo de Madeira e Palmeiras"),
+            ("foto_07.jpg", "Jardim Florido e Caminho sob as Árvores")
         ]
     },
     {
@@ -143,7 +147,42 @@ items = [
             ("07_Entrada_e_Jardim_Mangueira.jpg", "Entrada Arborizada sob Mangueiras Nativas"),
             ("02_Quarto_Geral_Casal_e_Beliches.jpg", "Quarto Familiar Amplo para até 7 Pessoas"),
             ("03_Cama_de_Casal_Principal.jpg", "Cama de Casal com Enxoval Branco"),
-            ("04_Beliches_de_Madeira_e_Cama_Solteiro.jpg", "Beliches de Madeira Maciça")
+            ("04_Beliches_de_Madeira_e_Cama_Solteiro.jpg", "Beliches de Madeira Maciça"),
+            ("foto_06.jpg", "Acesso Rústico com Guarda-Corpo de Madeira e Palmeiras"),
+            ("foto_07.jpg", "Área Verde e Paisagismo com Luminárias")
+        ]
+    },
+    {
+        "id": "camping",
+        "category": "camping lazer",
+        "category_label": "Área de Camping",
+        "badge": "⛺ Experiência ao Ar Livre • Conexão Total com a Natureza",
+        "title": "Área de Camping Oficial Vale Silvestre",
+        "tag_label": "🏕️ Gramado Arborizado com Estrutura Completa",
+        "capacity_label": "⛺ Espaço para Barracas com Banheiros, Duchas Quentes e Pontos de Energia",
+        "btn_text": "💬 Consultar Valores e Reservar Camping",
+        "wa_msg": "Olá! Vi as fotos da Área de Camping no catálogo oficial do Vale Silvestre e gostaria de consultar informações e disponibilidade para acampar!",
+        "desc": "Acampe sob as estrelas aos pés do Pico do Ibituruna com todo o conforto e segurança que sua família merece! Nossa área de camping conta com amplo gramado verde e plano, árvores frondosas que proporcionam sombra fresca, painel com mapa ecológico, banheiros estruturados com chuveiros quentes, tomadas 110v e 220v, iluminação noturna, pontos para redes, churrasqueiras fixas, geladeira comunitária e loja de conveniência. Você pode optar pelo pacote Simples (apenas camping) ou pelo pacote Completo (camping com pensão completa: jantar, café da manhã colonial e almoço inclusos)!",
+        "features": [
+            "Amplo Gramado Verde e Plano",
+            "Sombra Natural sob Árvores Frondosas",
+            "Banheiros com Chuveiros Quentes",
+            "Pontos de Energia 110v e 220v",
+            "Iluminação Noturna e Segurança",
+            "Churrasqueiras Fixas Disponíveis",
+            "Geladeira Comunitária",
+            "Ponto para Redes de Descanso",
+            "Acesso a Todo o Parque e Piscinas",
+            "Opção com Pensão Completa"
+        ],
+        "src_folder": "07_Area_de_Camping",
+        "dest_folder": "camping",
+        "allowed_files": [
+            ("foto_01.jpg", "Gramado da Área de Camping com Painel e Mapa Ecológico"),
+            ("foto_02.jpg", "Área de Camping Sombreada por Árvores Frondosas"),
+            ("foto_03.jpg", "Amplo Gramado Verde para Montagem de Barracas"),
+            ("foto_04.jpg", "Espaço Plano e Integrado à Natureza do Vale"),
+            ("foto_05.jpg", "Árvore Frondosa com Vista para as Montanhas")
         ]
     },
     {
@@ -170,10 +209,11 @@ items = [
         "src_folder": "08F_Piscinas_Adulto_e_Infantil",
         "dest_folder": "piscinas",
         "allowed_files": [
-            ("01_Piscina_Adulto_e_Infantil_Deck_Solar.jpg", "Piscina Adulto e Piscinas Infantis com Deck ao Ar Livre"),
-            ("02_Area_de_Piscinas_e_Mata_Nativa.jpg", "Área de Piscinas com Deck de Banho de Sol e Mata Nativa"),
-            ("03_Vista_Panoramica_Piscinas_e_Lagoa.jpg", "Vista Panorâmica do Complexo de Piscinas Integrado ao Lago"),
-            ("04_Vista_Aerea_Vale_Silvestre_Piscinas.jpg", "Vista Aérea Geral do Vale Silvestre com a Área de Piscinas")
+            ("foto_01.jpg", "Piscina Adulto e Piscina Infantil com Água Turquesa ao Sol"),
+            ("foto_02.jpg", "Deck de Banho de Sol com Floreiras e Pavilhão Coberto"),
+            ("foto_03.jpg", "Área de Piscinas com Deck de Banho de Sol e Mata Nativa"),
+            ("foto_04.jpg", "Vista Panorâmica do Complexo de Piscinas Integrado ao Lago"),
+            ("foto_05.jpg", "Vista Aérea Geral do Vale Silvestre com a Área de Piscinas")
         ]
     },
     {
@@ -199,7 +239,11 @@ items = [
             ("06_Pier_com_Moldura_de_Coracao_Fotos.jpg", "Píer Moldura Coração para Fotos"),
             ("07_Arvore_Gigante_com_Balanco_e_Pergolados.jpg", "Balanço na Árvore Gigante"),
             ("08_Portaria_e_Entrada_Vale_Silvestre_Eco_Park.jpg", "Portaria do Parque Ecológico"),
-            ("foto_09.jpg", "Área de Brinquedos ao Ar Livre e Balanço sob as Árvores")
+            ("foto_09.jpg", "Área de Brinquedos ao Ar Livre e Balanço sob as Árvores"),
+            ("foto_10.jpg", "Espelho d'Água do Lago com Reflexo da Natureza e Montanhas"),
+            ("foto_11.jpg", "Píer Coberto à Beira do Lago para Descanso e Contemplação"),
+            ("foto_12.jpg", "Ponte de Madeira sobre o Jardim Aquático"),
+            ("foto_13.jpg", "Lounge com Pergolado Rústico e Poltronas de Madeira")
         ]
     },
     {
@@ -256,14 +300,16 @@ items = [
             ("03_Cafe_da_Manha_Bolos_Caseiros_do_Vale.jpg", "Café da Manhã com Bolos Caseiros"),
             ("04_Bolo_de_Fuba_e_Quitandas_Mineiras.jpg", "Quitandas e Bolos Tradicionais"),
             ("05_Salao_e_Varanda_do_Restaurante.jpg", "Salão e Varanda do Restaurante"),
-            ("06_Musica_ao_Vivo_no_Quiosque_do_Almoco.jpg", "Música ao Vivo no Almoço")
+            ("06_Musica_ao_Vivo_no_Quiosque_do_Almoco.jpg", "Música ao Vivo no Almoço"),
+            ("foto_07.jpg", "Mesas Rústicas de Madeira no Salão do Restaurante"),
+            ("foto_08.jpg", "Lounge Aconchegante do Vale com Poltronas e Vista"),
+            ("foto_09.jpg", "Fachada Rústica e Pavilhão de Eventos e Gastronomia")
         ]
     }
 ]
 
-# Copy approved photos
+# Set up photos list
 for item in items:
-    src_dir = os.path.join(src_base, item["src_folder"])
     dest_dir = os.path.join(img_dest_root, item["dest_folder"])
     os.makedirs(dest_dir, exist_ok=True)
     item_photos = []
@@ -283,10 +329,10 @@ html_template = """<!DOCTYPE html>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Catálogo Oficial de Acomodações & Lazer — Pousada Vale Silvestre Ecopark</title>
-  <meta name="description" content="Conecte-se à Natureza, Viva Experiências Inesquecíveis. Conheça nossos chalés, gastronomia típica e parque ecológico em Governador Valadares/MG.">
+  <meta name="description" content="Conecte-se à Natureza, Viva Experiências Inesquecíveis. Conheça nossos chalés, área de camping, piscinas, gastronomia típica e parque ecológico em Governador Valadares/MG.">
   <meta name="theme-color" content="#395902">
   <meta property="og:title" content="Catálogo Oficial de Acomodações — Vale Silvestre Ecopark">
-  <meta property="og:description" content="Chalés aconchegantes com vista para a lagoa, pensão completa e lazer liberado em Governador Valadares/MG.">
+  <meta property="og:description" content="Chalés aconchegantes com vista para a lagoa, camping, pensão completa e lazer liberado em Governador Valadares/MG.">
   <meta property="og:image" content="img/logo_branca.png">
   <meta property="og:type" content="website">
   
@@ -348,9 +394,9 @@ html_template = """<!DOCTYPE html>
       margin-bottom: 16px;
     }
     .header-logo {
-      max-width: 220px;
+      max-width: 190px;
       height: auto;
-      display: inline-block;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
     }
     .badge-nature {
       display: inline-flex;
@@ -358,38 +404,40 @@ html_template = """<!DOCTYPE html>
       gap: 6px;
       background: rgba(251, 176, 59, 0.2);
       border: 1px solid var(--vs-gold);
-      color: #FFF;
+      color: #FFE699;
       font-family: var(--font-heading);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       padding: 5px 14px;
       border-radius: 20px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+      margin-bottom: 14px;
     }
     .hero-title {
       font-family: var(--font-heading);
       font-size: 32px;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-      line-height: 1.15;
+      font-weight: 800;
+      line-height: 1.2;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+      margin-bottom: 10px;
     }
     .hero-subtitle {
       font-size: 15px;
-      color: #F2EFEB;
-      max-width: 580px;
-      margin: 0 auto 18px;
-      line-height: 1.5;
+      color: #E8EDE0;
+      max-width: 620px;
+      margin: 0 auto 20px;
+      line-height: 1.55;
     }
     .hero-highlights {
       display: flex;
-      justify-content: center;
-      gap: 10px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      max-width: 720px;
+      margin: 0 auto;
     }
     .highlight-pill {
       background: rgba(255, 255, 255, 0.12);
@@ -399,55 +447,50 @@ html_template = """<!DOCTYPE html>
       font-size: 13px;
       font-weight: 600;
       padding: 6px 14px;
-      border-radius: 6px;
+      border-radius: 20px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
+      backdrop-filter: blur(4px);
     }
 
     /* STICKY FILTER BAR */
     .sticky-filter-wrapper {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--vs-card-border);
+      z-index: 100;
       padding: 10px 0;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 12px rgba(40, 64, 1, 0.08);
     }
     .filter-scroll {
       display: flex;
       gap: 8px;
       overflow-x: auto;
-      padding: 4px 16px;
       scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
+      padding: 2px 0;
     }
     .filter-scroll::-webkit-scrollbar { display: none; }
     .filter-btn {
       background: var(--vs-beige);
-      border: 1px solid #E1DEC8;
+      border: 1px solid #DED9D2;
       color: var(--vs-forest-green);
-      padding: 8px 18px;
-      border-radius: 24px;
       font-family: var(--font-heading);
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      padding: 8px 16px;
+      border-radius: 20px;
       white-space: nowrap;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
     }
-    .filter-btn:hover, .filter-btn.active {
+    .filter-btn.active, .filter-btn:hover {
       background: var(--vs-forest-green);
       color: #FFFFFF;
       border-color: var(--vs-forest-green);
-      box-shadow: 0 4px 12px rgba(57, 89, 2, 0.25);
     }
 
     /* CATALOG FEED */
@@ -458,42 +501,40 @@ html_template = """<!DOCTYPE html>
       gap: 28px;
     }
 
+    /* ROOM CARD */
     .room-card {
       background: var(--vs-card-bg);
-      border: 1px solid var(--vs-card-border);
       border-radius: 12px;
+      border: 1px solid var(--vs-card-border);
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(57, 89, 2, 0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(40, 64, 1, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .room-card:hover {
-      box-shadow: 0 14px 38px rgba(57, 89, 2, 0.14);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(40, 64, 1, 0.12);
     }
 
-    /* CAROUSEL / MAIN IMAGE */
+    /* CARD GALLERY */
     .card-gallery-wrap {
       position: relative;
-      background: #111;
+      width: 100%;
+      background: #000;
     }
     .main-photo-link {
       display: block;
-      position: relative;
-      width: 100%;
-      height: 260px;
-      overflow: hidden;
       cursor: pointer;
-    }
-    @media (min-width: 600px) {
-      .main-photo-link { height: 360px; }
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
     }
     .main-photo-link img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease;
+      transition: transform 0.35s ease;
     }
-    .room-card:hover .main-photo-link img {
+    .main-photo-link:hover img {
       transform: scale(1.03);
     }
     .top-badge {
@@ -825,12 +866,13 @@ html_template = """<!DOCTYPE html>
       <img src="img/logo_branca.png" alt="Vale Silvestre Ecopark" class="header-logo">
     </div>
     <div class="badge-nature">🌿 Conecte-se à Natureza • Ecopark & Pousada</div>
-    <h1 class="hero-title">Catálogo Oficial de Acomodações</h1>
-    <p class="hero-subtitle">Conheça nossos chalés aconchegantes com vista privilegiada para o lago, cercados de natureza exuberante, pensão completa e lazer liberado.</p>
+    <h1 class="hero-title">Catálogo Oficial de Acomodações & Experiências</h1>
+    <p class="hero-subtitle">Conheça nossos chalés aconchegantes com vista privilegiada para o lago, camping estruturado, piscinas, lazer ao ar livre e pensão completa.</p>
     
     <div class="hero-highlights">
       <span class="highlight-pill">🍽️ Pensão Completa Inclusa</span>
       <span class="highlight-pill">🏊 Piscinas Adulto & Infantil</span>
+      <span class="highlight-pill">⛺ Área de Camping Estruturada</span>
       <span class="highlight-pill">🚣 Caiaques & Pedalinhos</span>
       <span class="highlight-pill">🎨 Espaço Kids & Recreação</span>
       <span class="highlight-pill">☔ Estrutura 100% Coberta contra Chuva</span>
@@ -846,6 +888,7 @@ html_template = """<!DOCTYPE html>
         <button class="filter-btn" onclick="filterCategory('panoramicos', this)">🌅 Chalés Panorâmicos</button>
         <button class="filter-btn" onclick="filterCategory('lago', this)">🏡 Chalés do Lago</button>
         <button class="filter-btn" onclick="filterCategory('suites', this)">🌿 Suítes</button>
+        <button class="filter-btn" onclick="filterCategory('camping', this)">⛺ Camping</button>
         <button class="filter-btn" onclick="filterCategory('lazer', this)">🏊 Piscinas & Lazer</button>
         <button class="filter-btn" onclick="filterCategory('kids', this)">🎈 Espaço Kids Coberto</button>
         <button class="filter-btn" onclick="filterCategory('gastronomia', this)">🍽️ Gastronomia</button>
@@ -859,7 +902,6 @@ html_template = """<!DOCTYPE html>
 """
 
 for item in items:
-    photos_json = json.dumps(item["photos"])
     features_html = "".join([f'<span class="feature-chip">✓ {html.escape(f)}</span>' for f in item["features"]])
     first_photo = item["photos"][0]["rel_path"] if item["photos"] else ""
     
@@ -943,7 +985,7 @@ html_template += """
     <img src="img/logo_branca.png" alt="Vale Silvestre Ecopark" class="footer-logo">
     <p><strong>Pousada Vale Silvestre Ecopark</strong> — Governador Valadares/MG</p>
     <p style="margin: 8px 0;">Central de Reservas WhatsApp: <a href="https://wa.me/553399989100">(33) 99989-9100</a></p>
-    <p style="font-size: 13px; color: #DCDDE8;">Pensão Completa • Parque Aquático • Lago com Caiaques • Trilhas</p>
+    <p style="font-size: 13px; color: #DCDDE8;">Pensão Completa • Piscinas • Camping • Lago com Caiaques • Trilhas</p>
     <p style="margin-top: 14px; font-size: 12px; color: #ABB8C3;">© Vale Silvestre Eco Park. Todos os direitos reservados.</p>
   </footer>
 
@@ -1050,4 +1092,4 @@ html_template += """
 with open(os.path.join(site_dir, "index.html"), "w", encoding="utf-8") as f:
     f.write(html_template)
 
-print("SUCCESS! Updated prepare_site.py and index.html with customized buttons and tags!")
+print("SUCCESS! Updated prepare_site.py and index.html with new photos, camping section, and official branding!")

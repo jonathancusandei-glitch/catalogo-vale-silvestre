@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Catálogo Oficial de Acomodações & Lazer — Pousada Vale Silvestre Ecopark</title>
-  <meta name="description" content="Conecte-se à Natureza, Viva Experiências Inesquecíveis. Conheça nossos chalés, gastronomia típica e parque ecológico em Governador Valadares/MG.">
+  <meta name="description" content="Conecte-se à Natureza, Viva Experiências Inesquecíveis. Conheça nossos chalés, área de camping, piscinas, gastronomia típica e parque ecológico em Governador Valadares/MG.">
   <meta name="theme-color" content="#395902">
   <meta property="og:title" content="Catálogo Oficial de Acomodações — Vale Silvestre Ecopark">
-  <meta property="og:description" content="Chalés aconchegantes com vista para a lagoa, pensão completa e lazer liberado em Governador Valadares/MG.">
+  <meta property="og:description" content="Chalés aconchegantes com vista para a lagoa, camping, pensão completa e lazer liberado em Governador Valadares/MG.">
   <meta property="og:image" content="img/logo_branca.png">
   <meta property="og:type" content="website">
   
@@ -69,9 +69,9 @@
       margin-bottom: 16px;
     }
     .header-logo {
-      max-width: 220px;
+      max-width: 190px;
       height: auto;
-      display: inline-block;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.3));
     }
     .badge-nature {
       display: inline-flex;
@@ -79,38 +79,40 @@
       gap: 6px;
       background: rgba(251, 176, 59, 0.2);
       border: 1px solid var(--vs-gold);
-      color: #FFF;
+      color: #FFE699;
       font-family: var(--font-heading);
       font-size: 13px;
-      font-weight: 600;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
       padding: 5px 14px;
       border-radius: 20px;
-      margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
+      margin-bottom: 14px;
     }
     .hero-title {
       font-family: var(--font-heading);
       font-size: 32px;
-      font-weight: 700;
-      color: #FFFFFF;
-      letter-spacing: -0.5px;
-      margin-bottom: 6px;
-      line-height: 1.15;
+      font-weight: 800;
+      line-height: 1.2;
       text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #FFFFFF;
+      margin-bottom: 10px;
     }
     .hero-subtitle {
       font-size: 15px;
-      color: #F2EFEB;
-      max-width: 580px;
-      margin: 0 auto 18px;
-      line-height: 1.5;
+      color: #E8EDE0;
+      max-width: 620px;
+      margin: 0 auto 20px;
+      line-height: 1.55;
     }
     .hero-highlights {
       display: flex;
-      justify-content: center;
-      gap: 10px;
       flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      max-width: 720px;
+      margin: 0 auto;
     }
     .highlight-pill {
       background: rgba(255, 255, 255, 0.12);
@@ -120,55 +122,50 @@
       font-size: 13px;
       font-weight: 600;
       padding: 6px 14px;
-      border-radius: 6px;
+      border-radius: 20px;
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      text-transform: uppercase;
-      letter-spacing: 0.4px;
+      backdrop-filter: blur(4px);
     }
 
     /* STICKY FILTER BAR */
     .sticky-filter-wrapper {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: #FFFFFF;
       border-bottom: 1px solid var(--vs-card-border);
+      z-index: 100;
       padding: 10px 0;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+      box-shadow: 0 4px 12px rgba(40, 64, 1, 0.08);
     }
     .filter-scroll {
       display: flex;
       gap: 8px;
       overflow-x: auto;
-      padding: 4px 16px;
       scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
+      padding: 2px 0;
     }
     .filter-scroll::-webkit-scrollbar { display: none; }
     .filter-btn {
       background: var(--vs-beige);
-      border: 1px solid #E1DEC8;
+      border: 1px solid #DED9D2;
       color: var(--vs-forest-green);
-      padding: 8px 18px;
-      border-radius: 24px;
       font-family: var(--font-heading);
       font-size: 14px;
-      font-weight: 600;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      padding: 8px 16px;
+      border-radius: 20px;
       white-space: nowrap;
       cursor: pointer;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
     }
-    .filter-btn:hover, .filter-btn.active {
+    .filter-btn.active, .filter-btn:hover {
       background: var(--vs-forest-green);
       color: #FFFFFF;
       border-color: var(--vs-forest-green);
-      box-shadow: 0 4px 12px rgba(57, 89, 2, 0.25);
     }
 
     /* CATALOG FEED */
@@ -179,42 +176,40 @@
       gap: 28px;
     }
 
+    /* ROOM CARD */
     .room-card {
       background: var(--vs-card-bg);
-      border: 1px solid var(--vs-card-border);
       border-radius: 12px;
+      border: 1px solid var(--vs-card-border);
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(57, 89, 2, 0.08);
-      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 16px rgba(40, 64, 1, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .room-card:hover {
-      box-shadow: 0 14px 38px rgba(57, 89, 2, 0.14);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(40, 64, 1, 0.12);
     }
 
-    /* CAROUSEL / MAIN IMAGE */
+    /* CARD GALLERY */
     .card-gallery-wrap {
       position: relative;
-      background: #111;
+      width: 100%;
+      background: #000;
     }
     .main-photo-link {
       display: block;
-      position: relative;
-      width: 100%;
-      height: 260px;
-      overflow: hidden;
       cursor: pointer;
-    }
-    @media (min-width: 600px) {
-      .main-photo-link { height: 360px; }
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
     }
     .main-photo-link img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      transition: transform 0.4s ease;
+      transition: transform 0.35s ease;
     }
-    .room-card:hover .main-photo-link img {
+    .main-photo-link:hover img {
       transform: scale(1.03);
     }
     .top-badge {
@@ -546,12 +541,13 @@
       <img src="img/logo_branca.png" alt="Vale Silvestre Ecopark" class="header-logo">
     </div>
     <div class="badge-nature">🌿 Conecte-se à Natureza • Ecopark & Pousada</div>
-    <h1 class="hero-title">Catálogo Oficial de Acomodações</h1>
-    <p class="hero-subtitle">Conheça nossos chalés aconchegantes com vista privilegiada para o lago, cercados de natureza exuberante, pensão completa e lazer liberado.</p>
+    <h1 class="hero-title">Catálogo Oficial de Acomodações & Experiências</h1>
+    <p class="hero-subtitle">Conheça nossos chalés aconchegantes com vista privilegiada para o lago, camping estruturado, piscinas, lazer ao ar livre e pensão completa.</p>
     
     <div class="hero-highlights">
       <span class="highlight-pill">🍽️ Pensão Completa Inclusa</span>
       <span class="highlight-pill">🏊 Piscinas Adulto & Infantil</span>
+      <span class="highlight-pill">⛺ Área de Camping Estruturada</span>
       <span class="highlight-pill">🚣 Caiaques & Pedalinhos</span>
       <span class="highlight-pill">🎨 Espaço Kids & Recreação</span>
       <span class="highlight-pill">☔ Estrutura 100% Coberta contra Chuva</span>
@@ -567,6 +563,7 @@
         <button class="filter-btn" onclick="filterCategory('panoramicos', this)">🌅 Chalés Panorâmicos</button>
         <button class="filter-btn" onclick="filterCategory('lago', this)">🏡 Chalés do Lago</button>
         <button class="filter-btn" onclick="filterCategory('suites', this)">🌿 Suítes</button>
+        <button class="filter-btn" onclick="filterCategory('camping', this)">⛺ Camping</button>
         <button class="filter-btn" onclick="filterCategory('lazer', this)">🏊 Piscinas & Lazer</button>
         <button class="filter-btn" onclick="filterCategory('kids', this)">🎈 Espaço Kids Coberto</button>
         <button class="filter-btn" onclick="filterCategory('gastronomia', this)">🍽️ Gastronomia</button>
@@ -585,7 +582,7 @@
             <img id="main-img-panoramico-02" src="img/chale-panoramico-piso-02/foto_01.jpg" alt="Chalé Panorâmico — Piso 02 Superior">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('panoramico-02', 0)">
-            📸 Ver 6 fotos
+            📸 Ver 7 fotos
           </button>
         </div>
 
@@ -613,6 +610,10 @@
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 5)">
             <img src="img/chale-panoramico-piso-02/foto_06.jpg" alt="Vista Espetacular da Lagoa e Natureza">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('panoramico-02', 6)">
+            <img src="img/chale-panoramico-piso-02/foto_07.jpg" alt="Fachada dos Chalés Panorâmicos no Alto da Colina Verde">
           </div>
         
         </div>
@@ -643,7 +644,7 @@
             <img id="main-img-panoramico-01" src="img/chale-panoramico-piso-01/foto_01.jpg" alt="Chalé Panorâmico — Piso 01 Térreo">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('panoramico-01', 0)">
-            📸 Ver 6 fotos
+            📸 Ver 7 fotos
           </button>
         </div>
 
@@ -671,6 +672,10 @@
         
           <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 5)">
             <img src="img/chale-panoramico-piso-01/foto_06.jpg" alt="Bancada da Pia com Cestinha de Amenities">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('panoramico-01', 6)">
+            <img src="img/chale-panoramico-piso-01/foto_07.jpg" alt="Vista Externa dos Chalés Panorâmicos com Sol e Natureza">
           </div>
         
         </div>
@@ -813,7 +818,7 @@
             <img id="main-img-suite-central" src="img/suite-central/foto_01.jpg" alt="Suíte Central">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('suite-central', 0)">
-            📸 Ver 5 fotos
+            📸 Ver 7 fotos
           </button>
         </div>
 
@@ -837,6 +842,14 @@
         
           <div class="thumb-item" onclick="setCardPhoto('suite-central', 4)">
             <img src="img/suite-central/foto_05.jpg" alt="Bancada com Gabinete Rústico de Madeira">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('suite-central', 5)">
+            <img src="img/suite-central/foto_06.jpg" alt="Acesso Ensolarado com Guarda-Corpo de Madeira e Palmeiras">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('suite-central', 6)">
+            <img src="img/suite-central/foto_07.jpg" alt="Jardim Florido e Caminho sob as Árvores">
           </div>
         
         </div>
@@ -867,7 +880,7 @@
             <img id="main-img-suite-mangueira" src="img/suite-mangueira/foto_01.jpg" alt="Suíte Mangueira">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('suite-mangueira', 0)">
-            📸 Ver 5 fotos
+            📸 Ver 7 fotos
           </button>
         </div>
 
@@ -893,6 +906,14 @@
             <img src="img/suite-mangueira/foto_05.jpg" alt="Beliches de Madeira Maciça">
           </div>
         
+          <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 5)">
+            <img src="img/suite-mangueira/foto_06.jpg" alt="Acesso Rústico com Guarda-Corpo de Madeira e Palmeiras">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('suite-mangueira', 6)">
+            <img src="img/suite-mangueira/foto_07.jpg" alt="Área Verde e Paisagismo com Luminárias">
+          </div>
+        
         </div>
 
         <div class="card-body">
@@ -914,6 +935,60 @@
         </div>
       </article>
     
+      <article class="room-card" data-category="camping lazer" id="card-camping">
+        <div class="card-gallery-wrap">
+          <span class="top-badge">⛺ Experiência ao Ar Livre • Conexão Total com a Natureza</span>
+          <div class="main-photo-link" onclick="openLightboxFromCard('camping', 0)">
+            <img id="main-img-camping" src="img/camping/foto_01.jpg" alt="Área de Camping Oficial Vale Silvestre">
+          </div>
+          <button class="photo-count-btn" onclick="openLightboxFromCard('camping', 0)">
+            📸 Ver 5 fotos
+          </button>
+        </div>
+
+        <div class="thumbs-row">
+          
+          <div class="thumb-item" onclick="setCardPhoto('camping', 0)">
+            <img src="img/camping/foto_01.jpg" alt="Gramado da Área de Camping com Painel e Mapa Ecológico">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('camping', 1)">
+            <img src="img/camping/foto_02.jpg" alt="Área de Camping Sombreada por Árvores Frondosas">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('camping', 2)">
+            <img src="img/camping/foto_03.jpg" alt="Amplo Gramado Verde para Montagem de Barracas">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('camping', 3)">
+            <img src="img/camping/foto_04.jpg" alt="Espaço Plano e Integrado à Natureza do Vale">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('camping', 4)">
+            <img src="img/camping/foto_05.jpg" alt="Árvore Frondosa com Vista para as Montanhas">
+          </div>
+        
+        </div>
+
+        <div class="card-body">
+          <div class="card-header-info">
+            <span class="door-sign-tag">🏕️ Gramado Arborizado com Estrutura Completa</span>
+            <h2 class="room-title">Área de Camping Oficial Vale Silvestre</h2>
+            <span class="capacity-tag">⛺ Espaço para Barracas com Banheiros, Duchas Quentes e Pontos de Energia</span>
+          </div>
+
+          <p class="room-desc">Acampe sob as estrelas aos pés do Pico do Ibituruna com todo o conforto e segurança que sua família merece! Nossa área de camping conta com amplo gramado verde e plano, árvores frondosas que proporcionam sombra fresca, painel com mapa ecológico, banheiros estruturados com chuveiros quentes, tomadas 110v e 220v, iluminação noturna, pontos para redes, churrasqueiras fixas, geladeira comunitária e loja de conveniência. Você pode optar pelo pacote Simples (apenas camping) ou pelo pacote Completo (camping com pensão completa: jantar, café da manhã colonial e almoço inclusos)!</p>
+
+          <div class="features-list">
+            <span class="feature-chip">✓ Amplo Gramado Verde e Plano</span><span class="feature-chip">✓ Sombra Natural sob Árvores Frondosas</span><span class="feature-chip">✓ Banheiros com Chuveiros Quentes</span><span class="feature-chip">✓ Pontos de Energia 110v e 220v</span><span class="feature-chip">✓ Iluminação Noturna e Segurança</span><span class="feature-chip">✓ Churrasqueiras Fixas Disponíveis</span><span class="feature-chip">✓ Geladeira Comunitária</span><span class="feature-chip">✓ Ponto para Redes de Descanso</span><span class="feature-chip">✓ Acesso a Todo o Parque e Piscinas</span><span class="feature-chip">✓ Opção com Pensão Completa</span>
+          </div>
+
+          <a href="https://wa.me/553399989100?text=Ol%C3%A1%21%20Vi%20as%20fotos%20da%20%C3%81rea%20de%20Camping%20no%20cat%C3%A1logo%20oficial%20do%20Vale%20Silvestre%20e%20gostaria%20de%20consultar%20informa%C3%A7%C3%B5es%20e%20disponibilidade%20para%20acampar%21" target="_blank" class="btn-reserve-card">
+            💬 Consultar Valores e Reservar Camping
+          </a>
+        </div>
+      </article>
+    
       <article class="room-card" data-category="lazer piscinas" id="card-piscinas">
         <div class="card-gallery-wrap">
           <span class="top-badge">☀️ Piscinas Adulto &amp; Infantil • Lazer Refrescante</span>
@@ -921,26 +996,30 @@
             <img id="main-img-piscinas" src="img/piscinas/foto_01.jpg" alt="Piscinas Adulto &amp; Infantil e Área de Banho de Sol">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('piscinas', 0)">
-            📸 Ver 4 fotos
+            📸 Ver 5 fotos
           </button>
         </div>
 
         <div class="thumbs-row">
           
           <div class="thumb-item" onclick="setCardPhoto('piscinas', 0)">
-            <img src="img/piscinas/foto_01.jpg" alt="Piscina Adulto e Piscinas Infantis com Deck ao Ar Livre">
+            <img src="img/piscinas/foto_01.jpg" alt="Piscina Adulto e Piscina Infantil com Água Turquesa ao Sol">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('piscinas', 1)">
-            <img src="img/piscinas/foto_02.jpg" alt="Área de Piscinas com Deck de Banho de Sol e Mata Nativa">
+            <img src="img/piscinas/foto_02.jpg" alt="Deck de Banho de Sol com Floreiras e Pavilhão Coberto">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('piscinas', 2)">
-            <img src="img/piscinas/foto_03.jpg" alt="Vista Panorâmica do Complexo de Piscinas Integrado ao Lago">
+            <img src="img/piscinas/foto_03.jpg" alt="Área de Piscinas com Deck de Banho de Sol e Mata Nativa">
           </div>
         
           <div class="thumb-item" onclick="setCardPhoto('piscinas', 3)">
-            <img src="img/piscinas/foto_04.jpg" alt="Vista Aérea Geral do Vale Silvestre com a Área de Piscinas">
+            <img src="img/piscinas/foto_04.jpg" alt="Vista Panorâmica do Complexo de Piscinas Integrado ao Lago">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('piscinas', 4)">
+            <img src="img/piscinas/foto_05.jpg" alt="Vista Aérea Geral do Vale Silvestre com a Área de Piscinas">
           </div>
         
         </div>
@@ -971,7 +1050,7 @@
             <img id="main-img-lazer-natureza" src="img/lazer-natureza/foto_01.jpg" alt="Lazer Completo, Lagoa &amp; Atrações ao Ar Livre">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('lazer-natureza', 0)">
-            📸 Ver 9 fotos
+            📸 Ver 13 fotos
           </button>
         </div>
 
@@ -1011,6 +1090,22 @@
         
           <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 8)">
             <img src="img/lazer-natureza/foto_09.jpg" alt="Área de Brinquedos ao Ar Livre e Balanço sob as Árvores">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 9)">
+            <img src="img/lazer-natureza/foto_10.jpg" alt="Espelho d&#x27;Água do Lago com Reflexo da Natureza e Montanhas">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 10)">
+            <img src="img/lazer-natureza/foto_11.jpg" alt="Píer Coberto à Beira do Lago para Descanso e Contemplação">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 11)">
+            <img src="img/lazer-natureza/foto_12.jpg" alt="Ponte de Madeira sobre o Jardim Aquático">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('lazer-natureza', 12)">
+            <img src="img/lazer-natureza/foto_13.jpg" alt="Lounge com Pergolado Rústico e Poltronas de Madeira">
           </div>
         
         </div>
@@ -1103,7 +1198,7 @@
             <img id="main-img-gastronomia" src="img/gastronomia/foto_01.jpg" alt="Gastronomia Mineira &amp; Restaurante">
           </div>
           <button class="photo-count-btn" onclick="openLightboxFromCard('gastronomia', 0)">
-            📸 Ver 6 fotos
+            📸 Ver 9 fotos
           </button>
         </div>
 
@@ -1131,6 +1226,18 @@
         
           <div class="thumb-item" onclick="setCardPhoto('gastronomia', 5)">
             <img src="img/gastronomia/foto_06.jpg" alt="Música ao Vivo no Almoço">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('gastronomia', 6)">
+            <img src="img/gastronomia/foto_07.jpg" alt="Mesas Rústicas de Madeira no Salão do Restaurante">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('gastronomia', 7)">
+            <img src="img/gastronomia/foto_08.jpg" alt="Lounge Aconchegante do Vale com Poltronas e Vista">
+          </div>
+        
+          <div class="thumb-item" onclick="setCardPhoto('gastronomia', 8)">
+            <img src="img/gastronomia/foto_09.jpg" alt="Fachada Rústica e Pavilhão de Eventos e Gastronomia">
           </div>
         
         </div>
@@ -1186,12 +1293,12 @@
     <img src="img/logo_branca.png" alt="Vale Silvestre Ecopark" class="footer-logo">
     <p><strong>Pousada Vale Silvestre Ecopark</strong> — Governador Valadares/MG</p>
     <p style="margin: 8px 0;">Central de Reservas WhatsApp: <a href="https://wa.me/553399989100">(33) 99989-9100</a></p>
-    <p style="font-size: 13px; color: #DCDDE8;">Pensão Completa • Parque Aquático • Lago com Caiaques • Trilhas</p>
+    <p style="font-size: 13px; color: #DCDDE8;">Pensão Completa • Piscinas • Camping • Lago com Caiaques • Trilhas</p>
     <p style="margin-top: 14px; font-size: 12px; color: #ABB8C3;">© Vale Silvestre Eco Park. Todos os direitos reservados.</p>
   </footer>
 
   <script>
-    const catalogData = {"panoramico-02": [{"rel_path": "img/chale-panoramico-piso-02/foto_01.jpg", "title": "Cama de Casal com Cora\u00e7\u00e3o de P\u00e9talas", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_02.jpg", "title": "Mimo de Boas-Vindas Vale Silvestre", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_03.jpg", "title": "Quarto Amplo e Aconchegante", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_04.jpg", "title": "Bancada da Pia com Flores Naturais", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_05.jpg", "title": "Varanda Panor\u00e2mica Debru\u00e7ada na Lagoa", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_06.jpg", "title": "Vista Espetacular da Lagoa e Natureza", "clean_name": "foto_06.jpg"}], "panoramico-01": [{"rel_path": "img/chale-panoramico-piso-01/foto_01.jpg", "title": "Fachada dos Chal\u00e9s Panor\u00e2micos na Colina", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_02.jpg", "title": "Entrada T\u00e9rrea com Placa Orqu\u00eddea", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_03.jpg", "title": "Hall com Poema e Decora\u00e7\u00e3o R\u00fastica", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_04.jpg", "title": "Quarto Confort\u00e1vel Casal e Solteiro", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_05.jpg", "title": "Decora\u00e7\u00e3o Rom\u00e2ntica Especial", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_06.jpg", "title": "Bancada da Pia com Cestinha de Amenities", "clean_name": "foto_06.jpg"}], "lago-01": [{"rel_path": "img/chale-do-lago-1-quarto/foto_01.jpg", "title": "Varanda na Beira do Lago", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_02.jpg", "title": "Vista Geral dos Chal\u00e9s do Lago", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_03.jpg", "title": "Sala de Estar Ampla com Sof\u00e1s-Cama", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_04.jpg", "title": "Bancada Americana e Geladeira", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_05.jpg", "title": "Quarto Privativo Casal e Solteiro", "clean_name": "foto_05.jpg"}], "lago-02": [{"rel_path": "img/chale-do-lago-2-quartos/foto_01.jpg", "title": "Varanda Externa com Vista do Lago", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_02.jpg", "title": "Varanda Privativa na Margem da Lagoa", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_03.jpg", "title": "Sala de Estar Aconchegante", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_04.jpg", "title": "Bancada Americana e Frigobar Retr\u00f4", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_05.jpg", "title": "Quarto Principal Casal com Decora\u00e7\u00e3o", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_06.jpg", "title": "Segundo Quarto com 3 Camas de Solteiro", "clean_name": "foto_06.jpg"}], "suite-central": [{"rel_path": "img/suite-central/foto_01.jpg", "title": "Varanda T\u00e9rrea com Placa Bra\u00fana", "clean_name": "foto_01.jpg"}, {"rel_path": "img/suite-central/foto_02.jpg", "title": "Cama de Casal com Almofadas de Cora\u00e7\u00e3o", "clean_name": "foto_02.jpg"}, {"rel_path": "img/suite-central/foto_03.jpg", "title": "Quarto Arejado com Camas de Solteiro e TV", "clean_name": "foto_03.jpg"}, {"rel_path": "img/suite-central/foto_04.jpg", "title": "Vis\u00e3o Ampla e Ilumina\u00e7\u00e3o Natural", "clean_name": "foto_04.jpg"}, {"rel_path": "img/suite-central/foto_05.jpg", "title": "Bancada com Gabinete R\u00fastico de Madeira", "clean_name": "foto_05.jpg"}], "suite-mangueira": [{"rel_path": "img/suite-mangueira/foto_01.jpg", "title": "Fachada R\u00fastica com Pintura da Flora", "clean_name": "foto_01.jpg"}, {"rel_path": "img/suite-mangueira/foto_02.jpg", "title": "Entrada Arborizada sob Mangueiras Nativas", "clean_name": "foto_02.jpg"}, {"rel_path": "img/suite-mangueira/foto_03.jpg", "title": "Quarto Familiar Amplo para at\u00e9 7 Pessoas", "clean_name": "foto_03.jpg"}, {"rel_path": "img/suite-mangueira/foto_04.jpg", "title": "Cama de Casal com Enxoval Branco", "clean_name": "foto_04.jpg"}, {"rel_path": "img/suite-mangueira/foto_05.jpg", "title": "Beliches de Madeira Maci\u00e7a", "clean_name": "foto_05.jpg"}], "piscinas": [{"rel_path": "img/piscinas/foto_01.jpg", "title": "Piscina Adulto e Piscinas Infantis com Deck ao Ar Livre", "clean_name": "foto_01.jpg"}, {"rel_path": "img/piscinas/foto_02.jpg", "title": "\u00c1rea de Piscinas com Deck de Banho de Sol e Mata Nativa", "clean_name": "foto_02.jpg"}, {"rel_path": "img/piscinas/foto_03.jpg", "title": "Vista Panor\u00e2mica do Complexo de Piscinas Integrado ao Lago", "clean_name": "foto_03.jpg"}, {"rel_path": "img/piscinas/foto_04.jpg", "title": "Vista A\u00e9rea Geral do Vale Silvestre com a \u00c1rea de Piscinas", "clean_name": "foto_04.jpg"}], "lazer-natureza": [{"rel_path": "img/lazer-natureza/foto_01.jpg", "title": "Deck de Madeira com Ilumina\u00e7\u00e3o Noturna", "clean_name": "foto_01.jpg"}, {"rel_path": "img/lazer-natureza/foto_02.jpg", "title": "Passeio de Caiaque no Lago", "clean_name": "foto_02.jpg"}, {"rel_path": "img/lazer-natureza/foto_03.jpg", "title": "Pedalinho Cisne na Lagoa", "clean_name": "foto_03.jpg"}, {"rel_path": "img/lazer-natureza/foto_04.jpg", "title": "Pedalinho Drag\u00e3o Divertido", "clean_name": "foto_04.jpg"}, {"rel_path": "img/lazer-natureza/foto_05.jpg", "title": "Ponte P\u00eansil Suspensa", "clean_name": "foto_05.jpg"}, {"rel_path": "img/lazer-natureza/foto_06.jpg", "title": "P\u00eder Moldura Cora\u00e7\u00e3o para Fotos", "clean_name": "foto_06.jpg"}, {"rel_path": "img/lazer-natureza/foto_07.jpg", "title": "Balan\u00e7o na \u00c1rvore Gigante", "clean_name": "foto_07.jpg"}, {"rel_path": "img/lazer-natureza/foto_08.jpg", "title": "Portaria do Parque Ecol\u00f3gico", "clean_name": "foto_08.jpg"}, {"rel_path": "img/lazer-natureza/foto_09.jpg", "title": "\u00c1rea de Brinquedos ao Ar Livre e Balan\u00e7o sob as \u00c1rvores", "clean_name": "foto_09.jpg"}], "espaco-kids-coberto": [{"rel_path": "img/espaco-kids-coberto/foto_01.jpg", "title": "Sal\u00e3o Coberto de Recrea\u00e7\u00e3o Infantil com Monitora", "clean_name": "foto_01.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_02.jpg", "title": "Crian\u00e7as em Oficina Criativa de Pintura na \u00c1rea Coberta", "clean_name": "foto_02.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_03.jpg", "title": "Monitora Infantil Apoiando os Pequenos nas Atividades", "clean_name": "foto_03.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_04.jpg", "title": "Oficina Doce de Confeitar Biscoitos Art\u00edsticos", "clean_name": "foto_04.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_05.jpg", "title": "Momento Doce e Divertido das Crian\u00e7as no Espa\u00e7o Coberto", "clean_name": "foto_05.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_06.jpg", "title": "Amplo Sal\u00e3o Panor\u00e2mico Coberto e Envidra\u00e7ado", "clean_name": "foto_06.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_07.jpg", "title": "\u00c1rea de Brinquedos ao Ar Livre e Balan\u00e7o de Pneu", "clean_name": "foto_07.jpg"}], "gastronomia": [{"rel_path": "img/gastronomia/foto_01.jpg", "title": "Buffet Mineiro em Panelas de Barro", "clean_name": "foto_01.jpg"}, {"rel_path": "img/gastronomia/foto_02.jpg", "title": "Pratos Mineiros Tradicionais e Saladas", "clean_name": "foto_02.jpg"}, {"rel_path": "img/gastronomia/foto_03.jpg", "title": "Caf\u00e9 da Manh\u00e3 com Bolos Caseiros", "clean_name": "foto_03.jpg"}, {"rel_path": "img/gastronomia/foto_04.jpg", "title": "Quitandas e Bolos Tradicionais", "clean_name": "foto_04.jpg"}, {"rel_path": "img/gastronomia/foto_05.jpg", "title": "Sal\u00e3o e Varanda do Restaurante", "clean_name": "foto_05.jpg"}, {"rel_path": "img/gastronomia/foto_06.jpg", "title": "M\u00fasica ao Vivo no Almo\u00e7o", "clean_name": "foto_06.jpg"}]};
+    const catalogData = {"panoramico-02": [{"rel_path": "img/chale-panoramico-piso-02/foto_01.jpg", "title": "Cama de Casal com Cora\u00e7\u00e3o de P\u00e9talas", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_02.jpg", "title": "Mimo de Boas-Vindas Vale Silvestre", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_03.jpg", "title": "Quarto Amplo e Aconchegante", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_04.jpg", "title": "Bancada da Pia com Flores Naturais", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_05.jpg", "title": "Varanda Panor\u00e2mica Debru\u00e7ada na Lagoa", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_06.jpg", "title": "Vista Espetacular da Lagoa e Natureza", "clean_name": "foto_06.jpg"}, {"rel_path": "img/chale-panoramico-piso-02/foto_07.jpg", "title": "Fachada dos Chal\u00e9s Panor\u00e2micos no Alto da Colina Verde", "clean_name": "foto_07.jpg"}], "panoramico-01": [{"rel_path": "img/chale-panoramico-piso-01/foto_01.jpg", "title": "Fachada dos Chal\u00e9s Panor\u00e2micos na Colina", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_02.jpg", "title": "Entrada T\u00e9rrea com Placa Orqu\u00eddea", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_03.jpg", "title": "Hall com Poema e Decora\u00e7\u00e3o R\u00fastica", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_04.jpg", "title": "Quarto Confort\u00e1vel Casal e Solteiro", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_05.jpg", "title": "Decora\u00e7\u00e3o Rom\u00e2ntica Especial", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_06.jpg", "title": "Bancada da Pia com Cestinha de Amenities", "clean_name": "foto_06.jpg"}, {"rel_path": "img/chale-panoramico-piso-01/foto_07.jpg", "title": "Vista Externa dos Chal\u00e9s Panor\u00e2micos com Sol e Natureza", "clean_name": "foto_07.jpg"}], "lago-01": [{"rel_path": "img/chale-do-lago-1-quarto/foto_01.jpg", "title": "Varanda na Beira do Lago", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_02.jpg", "title": "Vista Geral dos Chal\u00e9s do Lago", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_03.jpg", "title": "Sala de Estar Ampla com Sof\u00e1s-Cama", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_04.jpg", "title": "Bancada Americana e Geladeira", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-do-lago-1-quarto/foto_05.jpg", "title": "Quarto Privativo Casal e Solteiro", "clean_name": "foto_05.jpg"}], "lago-02": [{"rel_path": "img/chale-do-lago-2-quartos/foto_01.jpg", "title": "Varanda Externa com Vista do Lago", "clean_name": "foto_01.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_02.jpg", "title": "Varanda Privativa na Margem da Lagoa", "clean_name": "foto_02.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_03.jpg", "title": "Sala de Estar Aconchegante", "clean_name": "foto_03.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_04.jpg", "title": "Bancada Americana e Frigobar Retr\u00f4", "clean_name": "foto_04.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_05.jpg", "title": "Quarto Principal Casal com Decora\u00e7\u00e3o", "clean_name": "foto_05.jpg"}, {"rel_path": "img/chale-do-lago-2-quartos/foto_06.jpg", "title": "Segundo Quarto com 3 Camas de Solteiro", "clean_name": "foto_06.jpg"}], "suite-central": [{"rel_path": "img/suite-central/foto_01.jpg", "title": "Varanda T\u00e9rrea com Placa Bra\u00fana", "clean_name": "foto_01.jpg"}, {"rel_path": "img/suite-central/foto_02.jpg", "title": "Cama de Casal com Almofadas de Cora\u00e7\u00e3o", "clean_name": "foto_02.jpg"}, {"rel_path": "img/suite-central/foto_03.jpg", "title": "Quarto Arejado com Camas de Solteiro e TV", "clean_name": "foto_03.jpg"}, {"rel_path": "img/suite-central/foto_04.jpg", "title": "Vis\u00e3o Ampla e Ilumina\u00e7\u00e3o Natural", "clean_name": "foto_04.jpg"}, {"rel_path": "img/suite-central/foto_05.jpg", "title": "Bancada com Gabinete R\u00fastico de Madeira", "clean_name": "foto_05.jpg"}, {"rel_path": "img/suite-central/foto_06.jpg", "title": "Acesso Ensolarado com Guarda-Corpo de Madeira e Palmeiras", "clean_name": "foto_06.jpg"}, {"rel_path": "img/suite-central/foto_07.jpg", "title": "Jardim Florido e Caminho sob as \u00c1rvores", "clean_name": "foto_07.jpg"}], "suite-mangueira": [{"rel_path": "img/suite-mangueira/foto_01.jpg", "title": "Fachada R\u00fastica com Pintura da Flora", "clean_name": "foto_01.jpg"}, {"rel_path": "img/suite-mangueira/foto_02.jpg", "title": "Entrada Arborizada sob Mangueiras Nativas", "clean_name": "foto_02.jpg"}, {"rel_path": "img/suite-mangueira/foto_03.jpg", "title": "Quarto Familiar Amplo para at\u00e9 7 Pessoas", "clean_name": "foto_03.jpg"}, {"rel_path": "img/suite-mangueira/foto_04.jpg", "title": "Cama de Casal com Enxoval Branco", "clean_name": "foto_04.jpg"}, {"rel_path": "img/suite-mangueira/foto_05.jpg", "title": "Beliches de Madeira Maci\u00e7a", "clean_name": "foto_05.jpg"}, {"rel_path": "img/suite-mangueira/foto_06.jpg", "title": "Acesso R\u00fastico com Guarda-Corpo de Madeira e Palmeiras", "clean_name": "foto_06.jpg"}, {"rel_path": "img/suite-mangueira/foto_07.jpg", "title": "\u00c1rea Verde e Paisagismo com Lumin\u00e1rias", "clean_name": "foto_07.jpg"}], "camping": [{"rel_path": "img/camping/foto_01.jpg", "title": "Gramado da \u00c1rea de Camping com Painel e Mapa Ecol\u00f3gico", "clean_name": "foto_01.jpg"}, {"rel_path": "img/camping/foto_02.jpg", "title": "\u00c1rea de Camping Sombreada por \u00c1rvores Frondosas", "clean_name": "foto_02.jpg"}, {"rel_path": "img/camping/foto_03.jpg", "title": "Amplo Gramado Verde para Montagem de Barracas", "clean_name": "foto_03.jpg"}, {"rel_path": "img/camping/foto_04.jpg", "title": "Espa\u00e7o Plano e Integrado \u00e0 Natureza do Vale", "clean_name": "foto_04.jpg"}, {"rel_path": "img/camping/foto_05.jpg", "title": "\u00c1rvore Frondosa com Vista para as Montanhas", "clean_name": "foto_05.jpg"}], "piscinas": [{"rel_path": "img/piscinas/foto_01.jpg", "title": "Piscina Adulto e Piscina Infantil com \u00c1gua Turquesa ao Sol", "clean_name": "foto_01.jpg"}, {"rel_path": "img/piscinas/foto_02.jpg", "title": "Deck de Banho de Sol com Floreiras e Pavilh\u00e3o Coberto", "clean_name": "foto_02.jpg"}, {"rel_path": "img/piscinas/foto_03.jpg", "title": "\u00c1rea de Piscinas com Deck de Banho de Sol e Mata Nativa", "clean_name": "foto_03.jpg"}, {"rel_path": "img/piscinas/foto_04.jpg", "title": "Vista Panor\u00e2mica do Complexo de Piscinas Integrado ao Lago", "clean_name": "foto_04.jpg"}, {"rel_path": "img/piscinas/foto_05.jpg", "title": "Vista A\u00e9rea Geral do Vale Silvestre com a \u00c1rea de Piscinas", "clean_name": "foto_05.jpg"}], "lazer-natureza": [{"rel_path": "img/lazer-natureza/foto_01.jpg", "title": "Deck de Madeira com Ilumina\u00e7\u00e3o Noturna", "clean_name": "foto_01.jpg"}, {"rel_path": "img/lazer-natureza/foto_02.jpg", "title": "Passeio de Caiaque no Lago", "clean_name": "foto_02.jpg"}, {"rel_path": "img/lazer-natureza/foto_03.jpg", "title": "Pedalinho Cisne na Lagoa", "clean_name": "foto_03.jpg"}, {"rel_path": "img/lazer-natureza/foto_04.jpg", "title": "Pedalinho Drag\u00e3o Divertido", "clean_name": "foto_04.jpg"}, {"rel_path": "img/lazer-natureza/foto_05.jpg", "title": "Ponte P\u00eansil Suspensa", "clean_name": "foto_05.jpg"}, {"rel_path": "img/lazer-natureza/foto_06.jpg", "title": "P\u00eder Moldura Cora\u00e7\u00e3o para Fotos", "clean_name": "foto_06.jpg"}, {"rel_path": "img/lazer-natureza/foto_07.jpg", "title": "Balan\u00e7o na \u00c1rvore Gigante", "clean_name": "foto_07.jpg"}, {"rel_path": "img/lazer-natureza/foto_08.jpg", "title": "Portaria do Parque Ecol\u00f3gico", "clean_name": "foto_08.jpg"}, {"rel_path": "img/lazer-natureza/foto_09.jpg", "title": "\u00c1rea de Brinquedos ao Ar Livre e Balan\u00e7o sob as \u00c1rvores", "clean_name": "foto_09.jpg"}, {"rel_path": "img/lazer-natureza/foto_10.jpg", "title": "Espelho d'\u00c1gua do Lago com Reflexo da Natureza e Montanhas", "clean_name": "foto_10.jpg"}, {"rel_path": "img/lazer-natureza/foto_11.jpg", "title": "P\u00eder Coberto \u00e0 Beira do Lago para Descanso e Contempla\u00e7\u00e3o", "clean_name": "foto_11.jpg"}, {"rel_path": "img/lazer-natureza/foto_12.jpg", "title": "Ponte de Madeira sobre o Jardim Aqu\u00e1tico", "clean_name": "foto_12.jpg"}, {"rel_path": "img/lazer-natureza/foto_13.jpg", "title": "Lounge com Pergolado R\u00fastico e Poltronas de Madeira", "clean_name": "foto_13.jpg"}], "espaco-kids-coberto": [{"rel_path": "img/espaco-kids-coberto/foto_01.jpg", "title": "Sal\u00e3o Coberto de Recrea\u00e7\u00e3o Infantil com Monitora", "clean_name": "foto_01.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_02.jpg", "title": "Crian\u00e7as em Oficina Criativa de Pintura na \u00c1rea Coberta", "clean_name": "foto_02.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_03.jpg", "title": "Monitora Infantil Apoiando os Pequenos nas Atividades", "clean_name": "foto_03.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_04.jpg", "title": "Oficina Doce de Confeitar Biscoitos Art\u00edsticos", "clean_name": "foto_04.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_05.jpg", "title": "Momento Doce e Divertido das Crian\u00e7as no Espa\u00e7o Coberto", "clean_name": "foto_05.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_06.jpg", "title": "Amplo Sal\u00e3o Panor\u00e2mico Coberto e Envidra\u00e7ado", "clean_name": "foto_06.jpg"}, {"rel_path": "img/espaco-kids-coberto/foto_07.jpg", "title": "\u00c1rea de Brinquedos ao Ar Livre e Balan\u00e7o de Pneu", "clean_name": "foto_07.jpg"}], "gastronomia": [{"rel_path": "img/gastronomia/foto_01.jpg", "title": "Buffet Mineiro em Panelas de Barro", "clean_name": "foto_01.jpg"}, {"rel_path": "img/gastronomia/foto_02.jpg", "title": "Pratos Mineiros Tradicionais e Saladas", "clean_name": "foto_02.jpg"}, {"rel_path": "img/gastronomia/foto_03.jpg", "title": "Caf\u00e9 da Manh\u00e3 com Bolos Caseiros", "clean_name": "foto_03.jpg"}, {"rel_path": "img/gastronomia/foto_04.jpg", "title": "Quitandas e Bolos Tradicionais", "clean_name": "foto_04.jpg"}, {"rel_path": "img/gastronomia/foto_05.jpg", "title": "Sal\u00e3o e Varanda do Restaurante", "clean_name": "foto_05.jpg"}, {"rel_path": "img/gastronomia/foto_06.jpg", "title": "M\u00fasica ao Vivo no Almo\u00e7o", "clean_name": "foto_06.jpg"}, {"rel_path": "img/gastronomia/foto_07.jpg", "title": "Mesas R\u00fasticas de Madeira no Sal\u00e3o do Restaurante", "clean_name": "foto_07.jpg"}, {"rel_path": "img/gastronomia/foto_08.jpg", "title": "Lounge Aconchegante do Vale com Poltronas e Vista", "clean_name": "foto_08.jpg"}, {"rel_path": "img/gastronomia/foto_09.jpg", "title": "Fachada R\u00fastica e Pavilh\u00e3o de Eventos e Gastronomia", "clean_name": "foto_09.jpg"}]};
     let activeCardId = null;
     let activeIndex = 0;
 
